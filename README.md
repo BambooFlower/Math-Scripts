@@ -7,8 +7,8 @@ A collection of scripts for mathematical concepts visualization:
 
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
-- Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
-- Bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
+- Bifn.py: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [Pyhton Version]
+- Bifurcation.m: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [MATLAB Version]
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - DFactorialRec.m: Recursive computation of double factorial
 - ERIIGraph.m: Erdos-Renyi Type II Random Graph generator 
@@ -19,7 +19,7 @@ A collection of scripts for mathematical concepts visualization:
 - InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
 - KatzCentrality.m: Compute the Katz centrality vector 
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
-- RungeKutta.m: Runge-Kutta fourth order method for ODE solutions
+- RungeKutta.m: Runge-Kutta fourth order method ODE solver
 - Sigma.m: Estimation of Pi using Liebniz formula
 - TriChess.m: Computes the number of triple pairing in a triple chess tournament
 
