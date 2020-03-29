@@ -5,6 +5,10 @@
 
 A collection of MATLAB scripts for mathematical concepts visualization. The scripts cover mostly PDEs and Fluid Mechanics
 
+- Characteristics.m: Visualization of characteristics curves on different surfaces
+- InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
+- Mathematical Biology Folder: Visualization of Advection-Diffussion behavior of different biological invasions solutions 
+
 <br/><br/>
 
 For more information on PDEs: https://en.wikipedia.org/wiki/Partial_differential_equation
