@@ -5,15 +5,16 @@
 
 A collection of MATLAB scripts for mathematical concepts visualization. The scripts cover mostly PDEs and Fluid Mechanics
 
-- Characteristics.m: Visualization of characteristics curves on different surfaces
-- InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
-- bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
-- Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
-- Sigma.m: Estimation of Pi using Liebniz formula
+- Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
+- Characteristics.m: Visualization of characteristics curves on different surfaces
 - DFactorialRec.m: Recursive computation of double factorial
-- TriChess.m: Computes the number of triple pairing 
+- InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
+- Sigma.m: Estimation of Pi using Liebniz formula
+- TriChess.m: Computes the number of triple pairing
+- bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
+
 
 <br/><br/>
 
