@@ -8,6 +8,8 @@ A collection of MATLAB scripts for mathematical concepts visualization. The scri
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
 - Mathematical Biology Folder: Visualization of Advection-Diffussion behavior of different biological invasions solutions 
+- bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
+- Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 
 <br/><br/>
 
