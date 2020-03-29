@@ -10,6 +10,8 @@ A collection of MATLAB scripts for mathematical concepts visualization. The scri
 - Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - DFactorialRec.m: Recursive computation of double factorial
+- GraphicalSequences.m: Count the number of graphical sequences of length n
+- HavelHakimi.m: Check if a sequence is graphical using the Havel-Hakimi theorem for graphical sequences 
 - InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
 - Sigma.m: Estimation of Pi using Liebniz formula
 - TriChess.m: Computes the number of triple pairing
