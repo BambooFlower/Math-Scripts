@@ -10,7 +10,7 @@ A collection of MATLAB scripts for mathematical concepts visualization. The scri
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 - Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
-- Pi Estimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
+- PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
 
 <br/><br/>
 
