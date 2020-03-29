@@ -11,6 +11,9 @@ A collection of MATLAB scripts for mathematical concepts visualization. The scri
 - bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 - Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
+- Sigma.m: Estimation of Pi using Liebniz formula
+- DFactorialRec.m: Recursive computation of double factorial
+- TriChess.m: Computes the number of triple pairing 
 
 <br/><br/>
 
