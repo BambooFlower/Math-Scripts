@@ -8,6 +8,7 @@ A collection of MATLAB scripts for mathematical concepts visualization. The scri
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
 - Bifn.py: Python 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
+- Bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - DFactorialRec.m: Recursive computation of double factorial
 - ERIIGraph.m: Erdos-Renyi Type II Random Graph generator 
@@ -20,7 +21,6 @@ A collection of MATLAB scripts for mathematical concepts visualization. The scri
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
 - Sigma.m: Estimation of Pi using Liebniz formula
 - TriChess.m: Computes the number of triple pairing
-- bifurcation.m: MATLAB 1D bifurcation plotter for dicrete maps (both continuous and non-continuous)
 
 
 <br/><br/>
