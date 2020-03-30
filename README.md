@@ -3,7 +3,8 @@
 
 # Math-Scripts
 
-A collection of scripts for mathematical concepts visualization:
+A collection of scripts for mathematical computation and visualization, topics include Mathematical Biology, Graph Theory, 
+ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
