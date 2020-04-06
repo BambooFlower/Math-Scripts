@@ -13,6 +13,8 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - DFactorialRec.m: Recursive computation of double factorial
 - ERIIGraph.m: Erdos-Renyi Type II Random Graph generator 
+- GaussSeidel.m: Gauss-Seidel ODEs system solver [MATLAB Version]
+- GaussSeidel.py: Gauss-Seidel ODEs system solver [Pyhton Version]
 - GenFun.m: Compute the Walk Generating Function for an adjacency matrix A
 - GraphicalSequences.m: Count the number of graphical sequences of length n
 - HavelHakimi.m: Check if a sequence is graphical using the Havel-Hakimi theorem for graphical sequences 
@@ -20,6 +22,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
 - KatzCentrality.m: Compute the Katz centrality vector 
 - LorentzAttractor.m: Animation showing the Lorenz attractor 
+- Mandelbrot.m: Visualize the Mandelbrot set
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
 - RungeKutta.m: Runge-Kutta fourth order method ODE solver
 - Sigma.m: Estimation of Pi using Liebniz formula
