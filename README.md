@@ -6,6 +6,8 @@
 A collection of scripts for mathematical computation and visualization, topics include Mathematical Biology, Graph Theory, 
 ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 
+- Fluid Simulation Folder: Javascript visualization of a gas obeying the incompressible Navier-Stokes equations
+- Fourier Series: Javascript visualization of Fourier series 
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
 - Bifn.py: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [Pyhton Version]
