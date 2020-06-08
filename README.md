@@ -18,6 +18,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - GenFun.m: Compute the Walk Generating Function for an adjacency matrix A
 - GraphicalSequences.m: Count the number of graphical sequences of length n
 - HavelHakimi.m: Check if a sequence is graphical using the Havel-Hakimi theorem for graphical sequences 
+- HeatEquation.m: 3D Animation of the solution to the heat equation on a cylinder
 - Hashimoto.m: Compute the Hashimoto non-backtracking matrix from the adjacency matrix A
 - InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
 - KatzCentrality.m: Compute the Katz centrality vector 
