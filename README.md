@@ -9,6 +9,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Fluid Simulation Folder: Javascript visualization of a gas obeying the incompressible Navier-Stokes equations
 - Fourier Series: Javascript visualization of Fourier series 
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
+- Navier-Stokes Equations Folder: MATLAB animated visualization of the 2D Navier-Stokes equations
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
 - Bifn.py: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [Pyhton Version]
 - Bifurcation.m: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [MATLAB Version]
