@@ -37,6 +37,7 @@ figure(1)
 for j = 1:NumberFrames
     pdeplot(thermalmodel,'XYData',T(:,j),'ZData',T(:,j))
     colormap jet
+    colorbar('off')
     title('3D Animation of the Heat Equation')
     grid on
     axis([-1 1 -1 1 0 1]);
