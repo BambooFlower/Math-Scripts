@@ -16,6 +16,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - DFactorialRec.m: Recursive computation of double factorial
 - ERIIGraph.m: Erdos-Renyi Type II Random Graph generator 
+- FluidDynamics3D.c: Simulation of 3D Fluid Flow satisfying the Navier-Stokes equations 
 - GaussSeidel.m: Gauss-Seidel ODEs system solver [MATLAB Version]
 - GaussSeidel.py: Gauss-Seidel ODEs system solver [Pyhton Version]
 - GenFun.m: Compute the Walk Generating Function for an adjacency matrix A
