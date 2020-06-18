@@ -31,7 +31,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Mandelbrot.m: Visualize the Mandelbrot set
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
 - RungeKutta.m: Runge-Kutta fourth order method ODE solver
-- SIRWaning.py: SIR model with waning immnunity
+- SIRWaning.py: SIR model for population dynamics with waning immnunity
 - Sigma.m: Estimation of Pi using Liebniz formula
 - TriChess.m: Computes the number of triple pairing in a triple chess tournament
 
