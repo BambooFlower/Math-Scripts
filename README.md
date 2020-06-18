@@ -10,6 +10,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Fourier Series: Javascript visualization of Fourier series 
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - Navier-Stokes Equations Folder: MATLAB animated visualization of the 2D Navier-Stokes equations
+- Orbits Folder: Python scripts for cicular and elliptical orbits
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
 - Bifn.py: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [Pyhton Version]
 - Bifurcation.m: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [MATLAB Version]
@@ -30,6 +31,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Mandelbrot.m: Visualize the Mandelbrot set
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
 - RungeKutta.m: Runge-Kutta fourth order method ODE solver
+- SIRWaning.py: SIR model with waning immnunity
 - Sigma.m: Estimation of Pi using Liebniz formula
 - TriChess.m: Computes the number of triple pairing in a triple chess tournament
 
