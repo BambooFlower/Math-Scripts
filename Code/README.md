@@ -34,7 +34,7 @@ Navier-Stokes Equations contains:
 Orbits contains:
 - CircularOrbit.py: Plot a circular plot
 - EllepticalOrbit.py: Plot an elliptical plot
-- PlanetarySytem.py: Simulate a planetary system, including main star, planets and moons. The original code base is due to [@chelyabinsk](https://github.com/chelyabinsk)
+- PlanetarySytem.py: Simulate a planetary system, including main star, planets and moons. Major contributions by [@chelyabinsk](https://github.com/chelyabinsk)
 - simpleorbit.m: Animation of a circular orbit 
 
 <br/><br/>
