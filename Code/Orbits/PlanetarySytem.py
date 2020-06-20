@@ -12,7 +12,7 @@ pygame.font.init()
 
 clock = pygame.time.Clock()
 myfont = pygame.font.SysFont('Calibri', 20)
-target_fps = 60
+target_fps = 240
  
 # Set the height and width of the screen
 SIZE = [1280, 720]
@@ -22,12 +22,16 @@ pygame.display.set_caption("Orbiting Planets around a Star")
 
 
 class circle():
-    def __init__(self,pos,vel,color,mass,num):
+    def __init__(self,pos,vel,color,mass,r,num):
         self.x_vel, self.y_vel = vel
         self.x, self.y = pos
         self.color = color
         self.mass = mass
         self.num = num
+        self.trail_hist = []
+        self.max_trail_len = 3000
+        self.radius = r
+        self.trail_width = self.radius // 2
         
     def update_velocity(self, x_vel, y_vel, override=False):
         self.x_vel += x_vel
@@ -35,6 +39,11 @@ class circle():
         if(override):
             self.x_vel = x_vel
             self.y_vel = y_vel
+    
+    def update_trail(self):
+        self.trail_hist.append((int(self.x),int(self.y)))
+        if len(self.trail_hist) > self.max_trail_len:
+            self.trail_hist.pop(0)
         
     def update_pos(self, pos=(),bouncein=False):
         if(pos != ()):
@@ -58,14 +67,22 @@ class circle():
                         self.y = 1
                     self.y_vel *= -1
             self.x += self.x_vel
-            self.y += self.y_vel           
+            self.y += self.y_vel   
+            
+            self.update_trail()
     
     def get_text(self):
         msg = "n:{:.0f},x:{:.2f},y:{:.2f}\tvX:{:.2f},vY:{:.2f}".format(self.num,self.x,self.y,self.x_vel,self.y_vel)
         return msg
         
-def draw_dot(screen,color,pos,radius):
-    pygame.draw.circle(screen,color,pos,radius)
+def draw_dot(screen,dot):
+    # Draw the dot
+    pygame.draw.circle(screen,dot.color,(int(dot.x),int(dot.y)),dot.radius)
+    # Draw the trail
+    #print
+    for trail in dot.trail_hist:
+        #print(trail)
+        pygame.draw.circle(screen,dot.color,(int(trail[0]),int(trail[1])),dot.trail_width)
     
 def g_between(Planet,Sun):
     r = math.sqrt((Planet.x-Sun.x)**2 + (Planet.y-Sun.y)**2) # Distance between the planets
@@ -96,10 +113,11 @@ def g_between(Planet,Sun):
         Sun.update_velocity(x_vectorSun,y_vectorSun)
         
         # Print the new position
-        msg1 = Planet.get_text()
+        #msg1 = Planet.get_text()
         # msg2 = Sun.get_text()
         
-        sys.stdout.write("\r{}".format(msg1))
+        #sys.stdout.write("\r{}".format(msg1))
+        sys.stdout.write("\rFPS:{:.0f}".format(clock.get_fps()))
         
 
 
@@ -155,15 +173,15 @@ def draw_text():
     
 # Create the planets and the Sun: 
 # Planets:
-c1 = circle((600,460), (-0.25, 0), [255,255,255], mass = 10e3, num = 1)
-c3 = circle((600,560), (-0.20, 0), [255,0,0], mass = 10e8, num = 3) 
-c4 = circle((600,500), (-0.23, 0), [0,0,255], mass = 10e4, num = 4)
+c1 = circle((600,460), (-0.25, 0), [255,255,255], mass = 10e3, num = 1, r=5)
+c3 = circle((600,560), (-0.20, 0), [255,0,0], mass = 10e8, num = 3, r=7) 
+c4 = circle((600,500), (-0.23, 0), [0,0,255], mass = 10e4, num = 4, r=6)
 
 # Sun:
-c2 = circle((500,400), (0, 0), [255,255,0], mass = 10e10, num = 2) 
+c2 = circle((500,400), (0, 0), [255,255,0], mass = 10e10, num = 2, r = 10) 
 
 # Red Planet's moon:
-c5 = circle((595,575), (-0.14, 0), [0,255,0], mass = 10, num = 5)
+c5 = circle((595,575), (-0.14, 0), [0,255,0], mass = 10, num = 5, r = 2)
 
 
 
@@ -175,15 +193,15 @@ while not done:
         if event.type == pygame.QUIT:  # If user clicked close
             done = True   # Flag that we are done so we exit this loop
  
-    # Set the background and count the fps
+    # Redraw the background
     screen.fill([0,0,0])
     
-    # Draw the two planets
-    draw_dot(screen, c1.color, (round(c1.x), round(c1.y)), 5)
-    draw_dot(screen, c3.color, (round(c3.x), round(c3.y)), 7)   
-    draw_dot(screen, c4.color, (round(c4.x), round(c4.y)), 6)     
-    draw_dot(screen, c2.color, (round(c2.x), round(c2.y)), 10)  # Sun  
-    draw_dot(screen, c5.color, (round(c5.x), round(c5.y)), 2)    
+    # Draw the planets
+    draw_dot(screen, c1)
+    draw_dot(screen, c3)   
+    draw_dot(screen, c4)     
+    draw_dot(screen, c2)  # Sun  
+    draw_dot(screen, c5)    
 
     
     # Compute the force between the planets and update their positions
@@ -192,14 +210,17 @@ while not done:
     g_between(c4,c2)
     g_between(c5,c3)
     g_between(c5,c2)
-    c1.update_pos()
-    c3.update_pos()
-    c4.update_pos()
-    c5.update_pos()
-    c2.update_pos()
+    c1.update_pos(bouncein=True)
+    c3.update_pos(bouncein=True)
+    c4.update_pos(bouncein=True)
+    c5.update_pos(bouncein=True)
+    #c2.update_pos(bouncein=True)
     
     draw_text()
     
     # Update the screen with what we've drawn.
     pygame.display.flip()
     clock.tick(target_fps)
+
+# Close pygame
+pygame.quit()
