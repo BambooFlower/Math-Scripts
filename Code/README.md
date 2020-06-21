@@ -6,7 +6,6 @@ AudioVisualizer contains:
 - soft_cell.wav: Example song Tainted Love by Soft Cell
 
 <br/><br/>
-
 Fluid Simulations contains:
 - fluid.js: Simulation of fluid (gas) flow using the Navier-Stokes equations 
 - fluid_utils.js: PDE solver used to solve the Navier-Stokes equations 
