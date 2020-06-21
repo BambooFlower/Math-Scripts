@@ -14,7 +14,7 @@ class Renderer():
         M = 2048 # Slice size
 
         # Load the song
-        songName = "soft_cell.wav"
+        songName = "backstage.wav"
         song = Audio.Audio_fft(songName,True, M=M)
         
         # Initialize the visualizer
@@ -72,7 +72,7 @@ class Renderer():
         
         for i in range(0,29):
             if(data[i] >= 0):
-                pygame.draw.rect(self.screen,(0,0,0),(9+10+26.5*i,310-2,20,-1.35*295*data[i]))
+                pygame.draw.rect(self.screen,(0,0,0),(9+10+26.5*i,310-2,20,-0.6*295*data[i]))
     
     def draw_raw(self, data):
         # Draw the raw music frequency
@@ -86,6 +86,6 @@ class Renderer():
         avg /= 2**15
         
         for i in range(len(avg)):
-            pygame.draw.rect(self.screen,(0,0,0),(144+i,525,2.75,-2.3*150*avg[i]))
+            pygame.draw.rect(self.screen,(0,0,0),(144+i,525,2.75,-0.8*150*avg[i]))
 
 app = Renderer(fps=30)
