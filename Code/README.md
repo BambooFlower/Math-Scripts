@@ -13,13 +13,11 @@ Fluid Simulations contains:
 - sketch.js: Animation of fluid motion simulated in the other files
 
 <br/><br/>
-
 Fourier Series contains:
 - sketch.js: Actual Fourier Series program
 - index.html: Needed to run the Javascript code in the browser
 
 <br/><br/>
-
 Mathematical Biology contains:
 - Concentration1.m: Biological invasion with Advection-Diffusion scenario 1
 - Concentration2.m: Biological invasion with Advection-Diffusion scenario 2
@@ -31,14 +29,12 @@ Mathematical Biology contains:
 - fisher.m: Numerical simulation of Fisher's equation
 
 <br/><br/>
-
 Navier-Stokes Equations contains:
 - Graph_Flow_NavierStokes.m: Plot an animation of the simulated Navier-Stokes equations
 - ODE_rhs.m: Solve the ODE system, derived from discretization of the Navier-Stokes equations
 - Simulation_NavierStokes_Flow.m: Simulate the Navier-Stokes equations
 
 <br/><br/>
-
 Orbits contains:
 - CircularOrbit.py: Plot a circular plot
 - EllepticalOrbit.py: Plot an elliptical plot
@@ -46,15 +42,9 @@ Orbits contains:
 - simpleorbit.m: Animation of a circular orbit 
 
 <br/><br/>
-
 PiEstimate contains:
 - circle.m: Plot a circle 
 - findPi.m: Finds pi using Monte Carlo methods 
 - square.m: Plot a square
-
-
-
-
-
 
 
