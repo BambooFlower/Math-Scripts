@@ -7,7 +7,7 @@ A collection of scripts for mathematical computation and visualization, topics i
 ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 
 - Audio Visualizer Folder: Frequency spectrum visualizer using Fourier Transforms. Special thanks to [@chelyabinsk](https://github.com/chelyabinsk) for his major contributions
-- Fluid Simulation Folder: Javascript visualization of a gas obeying the incompressible Navier-Stokes equations
+- FluidSimulation Folder: Java (with Processing) visualization of a gas obeying the incompressible Navier-Stokes equations
 - Fourier Series: Javascript visualization of Fourier series 
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - Navier-Stokes Equations Folder: MATLAB animated visualization of the 2D Navier-Stokes equations
