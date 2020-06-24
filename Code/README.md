@@ -6,13 +6,6 @@ AudioVisualizer contains:
 - backstage.wav: Example song Backstage by Neffex
 
 <br/><br/>
-Fluid Simulations contains:
-- fluid.js: Simulation of fluid (gas) flow using the Navier-Stokes equations 
-- fluid_utils.js: PDE solver used to solve the Navier-Stokes equations 
-- index.html: Needed to run the Javascript code in the browser
-- sketch.js: Animation of fluid motion simulated in the other files
-
-<br/><br/>
 Fourier Series contains:
 - sketch.js: Actual Fourier Series program
 - index.html: Needed to run the Javascript code in the browser
