@@ -6,9 +6,13 @@
 A collection of scripts for mathematical computation and visualization, topics include Mathematical Biology, Graph Theory, 
 ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 
+- 2D Raycasting Folder: Javascript visualization of 2D ray casting
 - Audio Visualizer Folder: Frequency spectrum visualizer using Fourier Transforms. Special thanks to [@chelyabinsk](https://github.com/chelyabinsk) for his major contributions
+- Conway Game of Life Folder: Javascript implementation of Conway's game of life
+- Double Pendulum Folder: Javascript visualization of the motion of a double pendulum
 - FluidSimulation Folder: Java (with Processing) visualization of a gas obeying the incompressible Navier-Stokes equations
 - Fourier Series: Javascript visualization of Fourier series 
+- Hypercube Folder: Javascript visualization of hypercube (Tesseract)
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - Navier-Stokes Equations Folder: MATLAB animated visualization of the 2D Navier-Stokes equations
 - Orbits Folder: Python scripts for cicular and elliptical orbits
@@ -28,6 +32,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Hashimoto.m: Compute the Hashimoto non-backtracking matrix from the adjacency matrix A
 - InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
 - KatzCentrality.m: Compute the Katz centrality vector 
+- Knot3D.pde: 3D visualization of a knot 
 - LorentzAttractor.m: Animation showing the Lorenz attractor 
 - Mandelbrot.m: Visualize the Mandelbrot set
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
