@@ -17,12 +17,15 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Navier-Stokes Equations Folder: MATLAB animated visualization of the 2D Navier-Stokes equations
 - Orbits Folder: Python scripts for cicular and elliptical orbits
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
+- Quaternions Folder: C++ folder for 3D rotations using quaternions 
+
 - Bifn.py: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [Pyhton Version]
 - Bifurcation.m: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [MATLAB Version]
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - DFactorialRec.m: Recursive computation of double factorial
 - ERIIGraph.m: Erdos-Renyi Type II Random Graph generator 
-- FluidDynamics3D.c: Simulation of 3D Fluid Flow satisfying the Navier-Stokes equations 
+- FluidDynamics2D.cpp: Simulation of 2D Fluid Flow satisfying the Navier-Stokes equations 
+- FluidDynamics3D.cpp: Simulation of 3D Fluid Flow satisfying the Navier-Stokes equations 
 - GaussSeidel.m: Gauss-Seidel ODEs system solver [MATLAB Version]
 - GaussSeidel.py: Gauss-Seidel ODEs system solver [Pyhton Version]
 - GenFun.m: Compute the Walk Generating Function for an adjacency matrix A
@@ -39,6 +42,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - RungeKutta.m: Runge-Kutta fourth order method ODE solver
 - SIRWaning.py: SIR model for population dynamics with waning immnunity
 - Sigma.m: Estimate of Pi using Liebniz formula
+- Slerp.py: Spherical linear interpolation using quaternions 
 - TriChess.m: Compute the number of triple pairings in a triple chess tournament
 
 <br/><br/>
