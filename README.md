@@ -18,7 +18,6 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Orbits Folder: Python scripts for cicular and elliptical orbits
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
 - Quaternions Folder: C++ folder for 3D rotations using quaternions 
-
 - Bifn.py: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [Pyhton Version]
 - Bifurcation.m: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [MATLAB Version]
 - Characteristics.m: Visualization of characteristics curves on different surfaces
