@@ -10,15 +10,15 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Audio Visualizer Folder: Frequency spectrum visualizer using Fourier Transforms. Special thanks to [@chelyabinsk](https://github.com/chelyabinsk) for his major contributions
 - Conway Game of Life Folder: Javascript implementation of Conway's game of life
 - Double Pendulum Folder: Javascript visualization of the motion of a double pendulum
-- FluidSimulation Folder: Java (with Processing) visualization of a gas obeying the incompressible Navier-Stokes equations
+- FluidSimulation Folder: Java (Processing) visualization of a gas obeying the incompressible Navier-Stokes equations
 - Fourier Series: Javascript visualization of Fourier series 
-- Hypercube Folder: Javascript visualization of hypercube (Tesseract)
+- Hypercube Folder: Javascript visualization of the hypercube (Tesseract)
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - Navier-Stokes Equations Folder: MATLAB animated visualization of the 2D Navier-Stokes equations
 - Numerical Analysis Folder: Implementation of various numerical analysis methods
 - Orbits Folder: Python scripts for cicular and elliptical orbits
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
-- Quaternions Folder: C++ folder for 3D rotations using quaternions 
+- Quaternions Folder: 3D rotations using quaternions 
 
 <br/><br/>
 - Bifn.py: 1D bifurcation plotter for dicrete maps (both continuous and non-continuous) [Pyhton Version]
