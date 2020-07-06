@@ -15,6 +15,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Hypercube Folder: Javascript visualization of hypercube (Tesseract)
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffussion behavior of different biological invasions 
 - Navier-Stokes Equations Folder: MATLAB animated visualization of the 2D Navier-Stokes equations
+- Numerical Analysis Folder: Implementation of various numerical analysis methods
 - Orbits Folder: Python scripts for cicular and elliptical orbits
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo simulations
 - Quaternions Folder: C++ folder for 3D rotations using quaternions 
@@ -27,8 +28,6 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - ERIIGraph.m: Erdos-Renyi Type II Random Graph generator 
 - FluidDynamics2D.cpp: Simulation of 2D Fluid Flow satisfying the Navier-Stokes equations 
 - FluidDynamics3D.cpp: Simulation of 3D Fluid Flow satisfying the Navier-Stokes equations 
-- GaussSeidel.m: Gauss-Seidel ODEs system solver [MATLAB Version]
-- GaussSeidel.py: Gauss-Seidel ODEs system solver [Pyhton Version]
 - GenFun.m: Compute the Walk Generating Function for an adjacency matrix A
 - GraphicalSequences.m: Count the number of graphical sequences of length n
 - HavelHakimi.m: Check if a sequence is graphical using the Havel-Hakimi theorem for graphical sequences 
@@ -40,7 +39,6 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - LorentzAttractor.m: Animation showing the Lorenz attractor 
 - Mandelbrot.m: Visualization the Mandelbrot set
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
-- RungeKutta.m: Runge-Kutta fourth order method ODE solver
 - SIRWaning.py: SIR model for population dynamics with waning immnunity
 - Sigma.m: Estimate of Pi using Liebniz formula
 - Slerp.py: Spherical linear interpolation using quaternions 
