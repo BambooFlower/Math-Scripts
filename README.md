@@ -38,7 +38,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - KatzCentrality.m: Compute the Katz centrality vector 
 - Knot3D.pde: 3D visualization of a knot 
 - LorentzAttractor.m: Animation showing the Lorenz attractor 
-- Mandelbrot.m: Visualize the Mandelbrot set
+- Mandelbrot.m: Visualization the Mandelbrot set
 - PageRank.m: Compute the importance of a vertex using the PageRank algorithm
 - RungeKutta.m: Runge-Kutta fourth order method ODE solver
 - SIRWaning.py: SIR model for population dynamics with waning immnunity
