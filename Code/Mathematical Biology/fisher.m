@@ -1,4 +1,4 @@
-function fisher()
+function Fisher()
 
 close all
 

@@ -1,4 +1,4 @@
-function ddi
+function DDI
 % This function is used to check the Turing instability of a PDE
 % The eigenvalues are given as a1. 
 
