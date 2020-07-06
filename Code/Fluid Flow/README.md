@@ -1,4 +1,5 @@
-FluidSimulation contains:
-- Fluid.pde: Generate the fluid which obeys the Navier-Stokes equations
-- FluidSimulation.pde: Simulate the fluid motion (turbulence)
-- MoreFluid.pde: Solve the Navier-Stokes equations numerically
+Fluid Flow contains:
+- FlowSimulation Folder: Java (Processing) visualization of a gas obeying the incompressible Navier-Stokes equations
+- FluidDynamics2D.cpp: Simulation of 2D Fluid Flow satisfying the Navier-Stokes equations 
+- FluidDynamics3D.cpp: Simulation of 3D Fluid Flow satisfying the Navier-Stokes equations 
+- InviscidCylinderFlow.m: Visualization of inviscid flow past an infinite cylinder 
