@@ -1,5 +1,5 @@
 function output = Adaptsmp(f,a,b,tol,lev,fa,fm,fb)
-% Adaptive quadrature using simpson's rule
+% Adaptive quadrature using Simpson's rule
 %
 % Call as ADAPTSMP('f',a,b,tol) to approximate the integral of f(x)
 % over the interval a < x < b, attempting to achieve a absolute error
