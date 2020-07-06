@@ -1,4 +1,4 @@
-function [x, k] = cgp(x0, A, C, b, mit, stol, bbA, bbC)
+function [x, k] = CGP(x0, A, C, b, mit, stol, bbA, bbC)
 % Implementation of the flexible preconditioned conjugate gradient method
 %
 % Synopsis:

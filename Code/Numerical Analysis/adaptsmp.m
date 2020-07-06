@@ -1,4 +1,4 @@
-function output = adaptsmp(f,a,b,tol,lev,fa,fm,fb)
+function output = Adaptsmp(f,a,b,tol,lev,fa,fm,fb)
 % Adaptive quadrature using simpson's rule
 %
 % Call as ADAPTSMP('f',a,b,tol) to approximate the integral of f(x)
@@ -42,8 +42,8 @@ else
     % if tolerance is not satisfied, recursively refine approximation
     if abs(err) > tol*h
         m = (a + b)/2;
-        output = adaptsmp(f,a,m,tol,lev+1,fa,flm,fm) ...
-            + adaptsmp(f,m,b,tol,lev+1,fm,frm,fb);
+        output = Adaptsmp(f,a,m,tol,lev+1,fa,flm,fm) ...
+            + Adaptsmp(f,m,b,tol,lev+1,fm,frm,fb);
     end
 end
 

@@ -1,4 +1,4 @@
-function x = conjgrad(A, b, x)
+function x = Conjgrad(A, b, x)
 % Implementation of the Conjugate gradient method 
 
     r = b - A * x;
