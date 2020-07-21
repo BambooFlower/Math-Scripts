@@ -1,4 +1,4 @@
-
+// Putting it all together
 
 let walls = [];
 let ray;
@@ -7,7 +7,7 @@ let xoff = 0;
 let yoff = 10000;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
   for (let i = 0; i < 5; i++) {
     let x1 = random(width);
     let x2 = random(width);
@@ -27,7 +27,8 @@ function draw() {
   for (let wall of walls) {
     wall.show();
   }
-  particle.update(noise(xoff) * width, noise(yoff) * height);
+
+  particle.update(mouseX, mouseY)
   particle.show();
   particle.look(walls);
 
