@@ -1,9 +1,10 @@
 // Light Ray
 
 class Ray {
-  constructor(pos, angle) {
+  constructor(pos, angle,p) {
     this.pos = pos;
     this.dir = p5.Vector.fromAngle(angle);
+	this.p = p;
   }
 
   lookAt(x, y) {
@@ -13,11 +14,11 @@ class Ray {
   }
 
   show() {
-    stroke(255);
-    push();
-    translate(this.pos.x, this.pos.y);
-    line(0, 0, this.dir.x * 10, this.dir.y * 10);
-    pop();
+    this.p.stroke(255);
+    this.p.push();
+    this.p.translate(this.pos.x, this.pos.y);
+    this.p.line(0, 0, this.dir.x * 10, this.dir.y * 10);
+    this.p.pop();
   }
 
   cast(wall) {
@@ -39,7 +40,7 @@ class Ray {
     const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
     const u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
     if (t > 0 && t < 1 && u > 0) {
-      const pt = createVector();
+      const pt = this.p.createVector();
       pt.x = x1 + t * (x2 - x1);
       pt.y = y1 + t * (y2 - y1);
       return pt;

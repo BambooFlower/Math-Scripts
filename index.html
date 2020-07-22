@@ -6,12 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
     
-    <title>2D Ray Casting</title>
+    <title>Javascript scripts</title>
+	
+	<style>
+body {
+  background-color: black;
+  color: white;
+  font-size: 20pt;
+}
+
+h1 {
+  background-color: black;
+  color: white;
+}
+</style>
+	
   </head>
-  <body>
-    <script src="ray.js"></script>
-    <script src="boundary.js"></script>
-    <script src="particle.js"></script>
-    <script src="sketch.js"></script>
+  <h1> Visualization of the Javascript animations </h1>
+
+	<!-- 2D ray casting -->
+    <div id = "First">
+      <p> 2D Ray Casting </p>
+	  <script src="ray.js"></script>
+      <script src="boundary.js"></script>
+      <script src="particle.js"></script>
+      <script src="2DRayCastingSketch.js"> </script>
+	</div>
+    	
+	<!-- Conway Game of Life -->
+    <div id = "Second">
+        <p> Conway Game of Life </p>
+		<script src="ConwaySketch.js"></script>
+    </div>
+
+    <!-- Double Pendulum -->
+    <div id="Third">
+	  <p> Double Pendulum </p>
+      <script src="DoublePendulumSketch.js"></script>
+	</div>
+    
+    <!-- Fourier Series -->
+	<div id="Fourth">
+	  <p> Fourier Series Visualization </p>
+      <script src="FourierSeriesSketch.js"></script>
+	</div>
+	  
+    
+    <!-- Hypercube -->
+    <div id="Fifth">
+	  <p> Hypercube </p>
+	  <script src="matrix.js"></script>
+      <script src="P4Vector.js"></script>
+      <script src="HyperCubeSketch.js"></script>
+	</div>
+    
+
   </body>
 </html>

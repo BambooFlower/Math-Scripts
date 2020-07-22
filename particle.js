@@ -1,11 +1,12 @@
 // Light Particle
 
 class Particle {
-  constructor() {
-    this.pos = createVector(width / 2, height / 2);
+  constructor(p) {
+    this.pos = p.createVector(p.width / 2, p.height / 2);
     this.rays = [];
+	this.p = p;
     for (let a = 0; a < 360; a += 1) {
-      this.rays.push(new Ray(this.pos, radians(a)));
+      this.rays.push(new Ray(this.pos, p.radians(a),p));
     }
   }
 
@@ -31,15 +32,15 @@ class Particle {
       if (closest) {
         // colorMode(HSB);
         // stroke((i + frameCount * 2) % 360, 255, 255, 50);
-        stroke(255, 100);
-        line(this.pos.x, this.pos.y, closest.x, closest.y);
+        this.p.stroke(255, 100);
+        this.p.line(this.pos.x, this.pos.y, closest.x, closest.y);
       }
     }
   }
 
   show() {
-    fill(255);
-    ellipse(this.pos.x, this.pos.y, 4);
+    this.p.fill(255);
+    this.p.ellipse(this.pos.x, this.pos.y, 4);
     for (let ray of this.rays) {
       ray.show();
     }
