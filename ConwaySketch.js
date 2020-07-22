@@ -30,7 +30,7 @@ var conway = function( p ) { // p could be any variable name
   
   p.setup = function() {	
 	
-	p.createCanvas(1280, 720);
+	  p.createCanvas(1280, 720);
     cols = p.width / resolution;
     rows = p.height / resolution;
 
@@ -45,7 +45,13 @@ var conway = function( p ) { // p could be any variable name
   };
 
   p.draw = function() {
-	p.background(0);
+    p.background(0);
+    p.stroke(255);
+    p.line(0,0,0,720);
+    p.line(0,0,1280,0);
+    p.line(1280,0,1280,720);
+    p.line(0,720,1280,720);
+
 
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {

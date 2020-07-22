@@ -25,12 +25,12 @@ var dp = function(p) { // p could be any variable name
     cx = p.width / 2;
     cy = 150;
     buffer = p.createGraphics(p.width, p.height);
-    buffer.background(255);
+    buffer.background(0);
     buffer.translate(cx, cy);
   };
 
   p.draw = function() {
-    p.background(255);
+    p.background(0);
     p.imageMode(p.CORNER);
     p.image(buffer, 0, 0, p.width, p.height);
 
@@ -49,7 +49,11 @@ var dp = function(p) { // p could be any variable name
     let a2_a = (num1 * (num2 + num3 + num4)) / den;
 
     p.translate(cx, cy);
-    p.stroke(0);
+    p.stroke(255);
+    p.line(-250, -150, -250, 300);
+    p.line(-250, -150, 250, -150);
+    p.line(250, -150, 250, 300);
+    p.line(-250, 300, 250, 300);
     p.strokeWeight(2);
 
     let x1 = r1 * p.sin(a1);
@@ -59,11 +63,11 @@ var dp = function(p) { // p could be any variable name
     let y2 = y1 + r2 * p.cos(a2);
 
     p.line(0, 0, x1, y1);
-    p.fill(0);
+    p.fill(255);
     p.ellipse(x1, y1, m1, m1);
 
     p.line(x1, y1, x2, y2);
-    p.fill(0);
+    p.fill(255);
     p.ellipse(x2, y2, m2, m2);
 
     a1_v += a1_a;
@@ -72,7 +76,7 @@ var dp = function(p) { // p could be any variable name
     a2 += a2_v;
 
 
-    buffer.stroke(100);
+    buffer.stroke(100,0,0);
     if (p.frameCount > 1) {
       buffer.line(px2, py2, x2, y2);
     }

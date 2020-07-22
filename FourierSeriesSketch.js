@@ -6,7 +6,7 @@ var fs = function( p ) {
   let slider;
 
   p.setup = function() {
-    p.createCanvas(600, 400);
+    p.createCanvas(1200, 400);
     slider = p.createSlider(1, 10, 5);
   }
 
@@ -30,10 +30,14 @@ var fs = function( p ) {
       p.noFill();
       p.ellipse(prevx, prevy, radius * 2);
 
-      //fill(255);
       p.stroke(255);
+      p.line(-150,-200,-150,400);
+      p.line(900,-200,900,400);
+      p.line(-150,-200,900,-200);
+      p.line(-150,200,900,200);
+
+
       p.line(prevx, prevy, x, y);
-      //ellipse(x, y, 8);
     }
     wave.unshift(y);
   
@@ -48,7 +52,7 @@ var fs = function( p ) {
 
     time += 0.05;
 
-    if (wave.length > 250) {
+    if (wave.length > 650) {
       wave.pop();
     }
   }

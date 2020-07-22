@@ -29,6 +29,7 @@ var hc = function( p ) {
 
   p.draw = function() {
     p.background(0);
+    p.stroke(255);
     p.rotateX(-p.PI / 2);
     let projected3d = [];
 
