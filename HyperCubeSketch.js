@@ -105,4 +105,4 @@ var hc = function( p ) {
 };
 
 // Add canvas into the div
-var myp5 = new p5(hc, 'Fifth');
+var myp5 = new p5(hc, 'hypercube');
