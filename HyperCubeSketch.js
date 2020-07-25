@@ -7,8 +7,9 @@ var hc = function( p ) {
 
   p.setup = function() {
     let size = p.min(p.windowWidth, p.windowHeight);
-    p.createCanvas(500, 500, p.WEBGL);
-    // p.frameRate(30);
+    p.createCanvas(400, 400, p.WEBGL);
+    // p.frameRate(20)
+
     points[0] = new P4Vector(-1, -1, -1, 1);
     points[1] = new P4Vector(1, -1, -1, 1);
     points[2] = new P4Vector(1, 1, -1, 1);
@@ -30,6 +31,12 @@ var hc = function( p ) {
   p.draw = function() {
     p.background(0);
     p.stroke(255);
+
+    p.line(200, -200, 200, 200);
+    p.line(-200, -200, -200, 200);
+    p.line(-200, -200, 200, -200);
+    p.line(-200, 200, 200, 200);
+
     p.rotateX(-p.PI / 2);
     let projected3d = [];
 
@@ -54,7 +61,7 @@ var hc = function( p ) {
       rotated = matmul(rotationZW, rotated);
 
       let distance = 2;
-      let w = 1 / (distance - rotated.w);
+      let w = 1/(distance - rotated.w) + 0.7;
 
       const projection = [
         [w, 0, 0, 0],
