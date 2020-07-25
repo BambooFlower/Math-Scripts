@@ -32,3 +32,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Sigma.m: Estimate of Pi using Liebniz formula
 - TriChess.m: Compute the number of triple pairings in a triple chess tournament
 
+<br/><br/>
+The  JavaScript code can be viewed [here](https://bambooflower.github.io/Math-Scripts/)
+
+
