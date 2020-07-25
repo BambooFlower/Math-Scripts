@@ -1,4 +1,4 @@
-[Live Example](https://BambooFlower.github.io/Math-Scripts/#fourier)
+[Live Example](https://BambooFlower.github.io/Math-Scripts/#ray_casting)
 
 2D Raycasting contains:
 - boundary.js: Generate the boundaries (i.e the enviroment)
