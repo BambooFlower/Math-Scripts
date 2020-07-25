@@ -60,4 +60,4 @@ var fs = function( p ) {
 };
 
 // Add canvas into the div
-var myp5 = new p5(fs, 'Fourth');
+var myp5 = new p5(fs, 'fourier');
