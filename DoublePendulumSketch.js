@@ -87,4 +87,4 @@ var dp = function(p) { // p could be any variable name
 };
 
 // Add canvas into the div
-var myp5 = new p5(dp, 'Third');
+var myp5 = new p5(dp, 'double_pendulum');
