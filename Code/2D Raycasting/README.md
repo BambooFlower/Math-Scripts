@@ -1,4 +1,4 @@
-(Live example)[https://chelyabinsk.github.io/Math-Scripts/#fourier]
+[Live example](https://chelyabinsk.github.io/Math-Scripts/#fourier)
 2D Raycasting contains:
 - boundary.js: Generate the boundaries (i.e the enviroment)
 - index.html: Needed to run the Javascript code in the browser
