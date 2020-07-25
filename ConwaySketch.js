@@ -90,4 +90,4 @@ var conway = function( p ) { // p could be any variable name
 };
 
 // Add canvas into the div
-var myp5 = new p5(conway, 'Second');
+var myp5 = new p5(conway, 'conway_game');
