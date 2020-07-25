@@ -40,4 +40,4 @@ var raycasting = function( p ) { // p could be any variable name
 };
 
 // Add canvas into the div
-var myp5 = new p5(raycasting, 'First');
+var myp5 = new p5(raycasting, 'ray_casting');
