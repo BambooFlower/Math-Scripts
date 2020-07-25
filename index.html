@@ -1,112 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
-    
+
     <title>JavaScript Animations</title>
-	
-	<style>
-body {
-  background-color: black;
-  color: white;
-}
 
-h1 {
-  background-color: black;
-  color: white;
-  font-size: 26pt;
-  margin-top: 5px;
-  margin-bottom: 30px;
-}
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
 
-h2 {
-  background-color: black;
-  color: white;
-  font-size: 20pt;
-  margin-bottom: 0px;
-}
-		
- /* unvisited link */
-a:link {
-  color: red;
-}
+      h1 {
+        background-color: black;
+        color: white;
+        font-size: 26pt;
+        margin-top: 5px;
+        margin-bottom: 30px;
+      }
 
-/* visited link */
-a:visited {
-  color: green;
-}
+      h2 {
+        background-color: black;
+        color: white;
+        font-size: 20pt;
+        margin-bottom: 0px;
+      }
 
-/* mouse over link */
-a:hover {
-  color: hotpink;
-}
+      /* unvisited link */
+      a:link {
+        color: red;
+      }
 
-/* selected link */
-a:active {
-  color: blue;
-} 
+      /* visited link */
+      a:visited {
+        color: green;
+      }
 
-p {
-  background-color: black;
-  color: white;
-  font-size: 12pt;
-  margin-top: 0px;
-}
-</style>
-	
+      /* mouse over link */
+      a:hover {
+        color: hotpink;
+      }
+
+      /* selected link */
+      a:active {
+        color: blue;
+      }
+
+      p {
+        background-color: black;
+        color: white;
+        font-size: 12pt;
+        margin-top: 0px;
+      }
+
+    </style>
+
   </head>
   <h1> Visualization of the JavaScript Animations </h1>
 
-	<!-- 2D ray casting -->
-    <div name="ray_casting" id = "ray_casting">
+  <body>
+
+
+    <!-- 2D ray casting -->
+    <div name="ray_casting" id="ray_casting">
       <h2> 2D Ray Casting </h2>
-      <p> Source Code Avalaible <a href = "https://github.com/BambooFlower/Math-Scripts/tree/master/Code/2D%20Raycasting"> here</a></p>
-	  <script src="ray.js"></script>
+      <p> Source Code Avalaible <a href="https://github.com/BambooFlower/Math-Scripts/tree/master/Code/2D%20Raycasting"> here</a></p>
+      <script src="ray.js"></script>
       <script src="boundary.js"></script>
       <script src="particle.js"></script>
       <script src="2DRayCastingSketch.js"> </script>
-	</div>
-    	
-	<!-- Conway Game of Life -->
-    <div name="conway_game" id = "conway_game">
-        <h2> Conway Game of Life </h2>
-        <p> Source Code Avalaible <a href = "https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Conway%20Game%20of%20Life"> here</a></p>
-		<script src="ConwaySketch.js"></script>
+    </div>
+
+    <!-- Conway Game of Life -->
+    <div name="conway_game" id="conway_game">
+      <h2> Conway Game of Life </h2>
+      <p> Source Code Avalaible <a href="https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Conway%20Game%20of%20Life"> here</a></p>
+      <script src="ConwaySketch.js"></script>
     </div>
 
     <!-- Double Pendulum -->
     <div name="double_pendulum" id="double_pendulum">
-    <h2> Double Pendulum </h2>
-    <p> Source Code Avalaible <a href = "https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Double%20Pendulum"> here</a></p>
+      <h2> Double Pendulum </h2>
+      <p> Source Code Avalaible <a href="https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Double%20Pendulum"> here</a></p>
       <script src="DoublePendulumSketch.js"></script>
-	</div>
-    
+    </div>
+
     <!-- Fourier Series -->
-	<div name="fourier" id="fourier">
-    <h2> Fourier Series Visualization </h2>
-    <p> Source Code Avalaible <a href = "https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Fourier%20Series"> here</a></p>
+    <div name="fourier" id="fourier">
+      <h2> Fourier Series Visualization </h2>
+      <p> Source Code Avalaible <a href="https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Fourier%20Series"> here</a></p>
       <script src="FourierSeriesSketch.js"></script>
-	</div>
-	  
-    
+    </div>
+
+
     <!-- Hypercube -->
     <div name="hypercube" id="hypercube">
-    <h2> Hypercube </h2>
-    <p> Source Code Avalaible <a href = "https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Hypercube"> here</a></p>
-	  <script src="matrix.js"></script>
+      <h2> Hypercube </h2>
+      <p> Source Code Avalaible <a href="https://github.com/BambooFlower/Math-Scripts/tree/master/Code/Hypercube"> here</a></p>
+      <script src="matrix.js"></script>
       <script src="P4Vector.js"></script>
       <script src="HyperCubeSketch.js"></script>
-	</div> 
-	
-   <footer>
-   <p style="text-align:center;">
-	<img src="https://raw.githubusercontent.com/BambooFlower/Math-Scripts/master/Plots/GitHub%20Pages/githubLogo.png"/>
-	<br>
-  	<p style="text-align:center;"> The whole repository can be viewed <a href = "https://github.com/BambooFlower/Math-Scripts"> here</a></p>
-   </p>
-   </footer>   
+    </div>
+
+    <footer>
+      <p style="text-align:center;">
+        <img src="https://raw.githubusercontent.com/BambooFlower/Math-Scripts/master/Plots/GitHub%20Pages/githubLogo.png" />
+        <br>
+        <p style="text-align:center;"> The whole repository can be viewed <a href="https://github.com/BambooFlower/Math-Scripts"> here</a></p>
+      </p>
+    </footer>
   </body>
 </html>
+
