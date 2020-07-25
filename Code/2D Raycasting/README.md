@@ -5,5 +5,5 @@
 - ray.js: Generate the light rays
 - sketch.js: Put it all together
 
-
+<br></br>
 A Live-Example can be viewed [here](https://BambooFlower.github.io/Math-Scripts/#ray_casting)
