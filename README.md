@@ -9,7 +9,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - 2D Raycasting Folder: JavaScript visualization of 2D ray casting
 - Audio Visualizer Folder: Frequency spectrum visualizer using Fourier Transforms. Special thanks to [@chelyabinsk](https://github.com/chelyabinsk) for his major contributions
 - Conway Game of Life Folder: JavaScript implementation of Conway's game of life
-- Cryptography Folder: A Collection of encryption-decryption ciphers
+- Cryptography Folder: Collection of encryption-decryption ciphers
 - Double Pendulum Folder: JavaScript visualization of the motion of a double pendulum
 - Fluid Flow Folder: Collection of fluid flow (both viscous and inviscid) visualizations
 - Fourier Series Folder: JavaScript visualization of Fourier series 
