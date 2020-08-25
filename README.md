@@ -7,6 +7,7 @@ A collection of scripts for mathematical computation and visualization, topics i
 ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 
 - 2D Raycasting Folder: JavaScript visualization of 2D ray casting
+- Attraction-Repulsion Forces Folder: JavaScript visualization of attraction-repulsion forces
 - Audio Visualizer Folder: Frequency spectrum visualizer using Fourier Transforms. Special thanks to [@chelyabinsk](https://github.com/chelyabinsk) for his major contributions
 - Bifurcation Folder: Bifurcation plotters
 - Conway Game of Life Folder: JavaScript implementation of Conway's game of life
