@@ -1,16 +1,12 @@
 The Code folder contains:
-
-- 2D Raycasting Folder: JavaScript visualization of 2D ray casting
-- Attraction-Repulsion Forces Folder: JavaScript visualization of attraction-repulsion forces
-- Audio Visualizer Folder: Frequency spectrum visualizer using Fourier Transforms. Special thanks to [@chelyabinsk](https://github.com/chelyabinsk) for his major contributions
 - Conway Game of Life Folder: JavaScript implementation of Conway's game of life
 - Cryptography Folder: Collection of encryption-decryption ciphers
+- Differential Geometry Folder: Collection of differential geometry scripts
 - Dynamical Systems Folder: Collection of scripts for dynamical systems theory 
 - Fluid Flow Folder: Collection of fluid flow (both viscous and inviscid) visualizations
 - Fourier Series & Transforms Folder: JavaScript visualization of Fourier series 
 - Graph Theory Folder: Collection of scripts for Graph Theory
 - Hypercube Folder: JavaScript visualization of the hypercube (Tesseract)
-- Knot Theory Folder: Collection of scripts for the visualization of knots 
 - Numerical Analysis Folder: Implementation of various numerical analysis methods
 - Partial Differential Equatons Fodler: Collection of PDEs scripts
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo trials
