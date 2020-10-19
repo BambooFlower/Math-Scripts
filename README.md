@@ -26,7 +26,8 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 <br/><br/>
 - Characteristics.m: Visualization of characteristics curves on different surfaces
 - Donut.cpp: Donut shpaed code that produces a 3D rotating donut
-- HeatEquation.m: 3D Animation of the solution to the heat equation on a cylinder
+- HeatEquation.m: 3D animation of the solution to the heat equation on a cylinder
+- Icemelting.m: 3D animation of the evolution of a block of ice as predicted by the heat equation
 - Knot3D.pde: 3D visualization of a knot 
 - LorentzAttractor.m: Animation showing the Lorenz attractor 
 - Mandelbrot.m: Visualization of the Mandelbrot set
