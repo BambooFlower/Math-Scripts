@@ -30,6 +30,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Knot3D.pde: 3D visualization of a knot 
 - LorentzAttractor.m: Animation showing the Lorenz attractor 
 - Mandelbrot.m: Visualization of the Mandelbrot set
+- VbratingDrum.m: Visualization of the wave equation in two dimensions with a zero-displacement boundary condition along the entire outer edge
 
 <br/><br/>
 The  JavaScript code can be seen running [here](https://bambooflower.github.io/Math-Scripts/)
