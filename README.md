@@ -13,7 +13,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Cryptography Folder: Collection of encryption-decryption ciphers
 - Dynamical Systems Folder: Collection of scripts for dynamical systems theory 
 - Fluid Flow Folder: Collection of fluid flow (both viscous and inviscid) visualizations
-- Fourier Series Folder: JavaScript visualization of Fourier series 
+- Fourier Series & Transforms Folder: JavaScript visualization of Fourier series 
 - Graph Theory Folder: Collection of scripts for Graph Theory
 - Hypercube Folder: JavaScript visualization of the hypercube (Tesseract)
 - Knot Theory Folder: Collection of scripts for the visualization of knots 
@@ -24,7 +24,6 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Quaternions Folder: 3D rotations using quaternions 
 
 <br/><br/>
-- Donut.cpp: Donut shpaed code that produces a 3D rotating donut
 - Mandelbrot.m: Visualization of the Mandelbrot set
 
 <br/><br/>
