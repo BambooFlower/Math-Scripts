@@ -8,4 +8,4 @@ Mathematical Biology contains:
 - Fisher.m: Numerical simulation of Fisher's equation
 - GiererMeinhardt1D.m: Numerical simulation of the 1D Gierer Meinhardt system
 - SIRWaning.py: SIR model for population dynamics with waning immnunity
-- pplane2017_v2.py: Tool for the study of planar autonomous ODEs
+- pplane2017b_v2.py: Tool for the study of planar autonomous ODEs
