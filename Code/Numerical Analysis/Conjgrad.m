@@ -1,6 +1,4 @@
 function x = Conjgrad(A, b, x)
-% Implementation of the Conjugate gradient method 
-
     r = b - A * x;
     p = r;
     rsold = r' * r;
@@ -12,7 +10,7 @@ function x = Conjgrad(A, b, x)
         r = r - alpha * Ap;
         rsnew = r' * r;
         if sqrt(rsnew) < 1e-10
-              break;
+              break
         end
         p = r + (rsnew / rsold) * p;
         rsold = rsnew;
