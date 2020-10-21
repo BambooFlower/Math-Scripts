@@ -1,7 +1,7 @@
 Numerical Analysis contains: 
 - Adaptsmp.m: Adaptive quadrature using Simpson's rule
 - CGP.m: Implementation of the flexible preconditioned conjugate gradient method
-- Conjgrad.m: Implementation of the Conjugate gradient method 
+- Conjgrad.m: Implementation of the conjugate gradient method 
 - CrankNicolsonHeatEquation.py: Crank-Nicolson method to solve the heat equation
 - EulerMethod.R: Implementation of Euler's method [R Version]
 - EulerMethod.m: Implementation of Euler's method [MATLAB Version]
