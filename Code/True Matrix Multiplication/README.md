@@ -7,7 +7,7 @@ Lazy man's shortcut for matrix multiplication. Observe that
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\begin{pmatrix}&space;9&space;&&space;7&space;\\&space;6&space;&&space;5&space;\end{pmatrix}\begin{pmatrix}6&space;&&space;7&space;\\&space;6&space;&&space;2&space;\end{pmatrix}=\begin{pmatrix}&space;96&space;&&space;77&space;\\&space;66&space;&&space;52&space;\end{pmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;9&space;&&space;7&space;\\&space;6&space;&&space;5&space;\end{pmatrix}\begin{pmatrix}6&space;&&space;7&space;\\&space;6&space;&&space;2&space;\end{pmatrix}=\begin{pmatrix}&space;96&space;&&space;77&space;\\&space;66&space;&&space;52&space;\end{pmatrix}" title="\begin{pmatrix} 9 & 7 \\ 6 & 5 \end{pmatrix}\begin{pmatrix}6 & 7 \\ 6 & 2 \end{pmatrix}=\begin{pmatrix} 96 & 77 \\ 66 & 52 \end{pmatrix}" /></a>
 
-Clearly, there is something spooky going on here. I have written a simple C++ file to find [all](all_matricies.txt) of the 
+Clearly, there is something spooky going on here. I have written a simple C++ program to find [all](all_matricies.txt) of the 
 examples for 2x2 matricies for Natural numbers bellow 100.
 
 ```shell
