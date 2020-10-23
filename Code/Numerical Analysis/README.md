@@ -4,6 +4,7 @@ Numerical Analysis contains:
 - Gradient Descent Folder: Implementation of Gradient Descent 
 - Matrix Multiplication Folder: Implementation of Matrix multiplication algorithms
 
+<br/><br/>
 - Adaptsmp.m: Adaptive quadrature using Simpson's rule
 - CGP.m: Implementation of the flexible preconditioned conjugate gradient method
 - Conjgrad.m: Implementation of the conjugate gradient method 
