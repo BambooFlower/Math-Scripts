@@ -1,0 +1,266 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{a4, caption, listings, graphicx, enumerate, amsmath, amssymb, mathtools, array, url, kantlipsum, natbib, graphicx, pdfpages, geometry,float, caption}
+
+\title{Residue Theorem: An Intuitive Approach }
+\author{Pietro Petitti}
+\date{December 2019}
+
+\geometry{legalpaper, margin=2cm}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+The aim of this document is to explain how the Residue Theorem works in an intuitive computational manner and explore an application of the theorem in the evaluation of integrals that cannot be computed using standard techniques. The following discussion assumes some knowledge of Complex Analysis, namely Cauchy's Theorem and some of its basics results, the notion of analytic functions, the ML-inquality and how to evaluate contour integrals
+\bigskip
+
+\section*{Singularities in the Complex 3D Plane}
+
+Before diving into the Residue Theorem, we will take a look at the behavior shown by singularities in the complex plane when seen in 3-Dimensions. As shown in Figure 1, as we approach these singularities the values of our function will tend to infinity creating something which resembles a pole. We can now imagine taking contours in the 3D plane, in particular we will first examine taking the contours in the empty space where the function takes no values. In those cases, we would be winding around empty areas and so it should be easy to see that:
+
+\begin{enumerate}
+  \item The Contour integrals will be zero, since our function takes no value at those points, giving a geometric intuition to Cauchy's Theorem
+  \item We can shrink the size of the contours till we make it disappear 
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height = 10cm, width = 10cm]{"Pictures/Singularities".png}
+    \caption{Poles in 3-Dimenasional Compllex plane}
+    \label{fig:my_label1}
+\end{figure}
+
+\noindent
+If instead, we take a contour around one of the poles we will see that we cannot reduce the size of the contour to zero, since by doing so we will reduce the contour to the point of the singularity itself, where by definition our function is not defined. And so we must find another way to compute those contour integrals
+
+\section*{Singularities in the Complex 2D Plane}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height = 4cm, width = 16cm]{"Pictures/Singularities1".png}
+    \caption{Deforming a path}
+    \label{fig:my_label2}
+\end{figure}
+
+\noindent
+Cauchy's theorem  states that every analytic function \(f\) has contour integral equal to \(zero\) along any closed contour connecting two points \(a\) and \(b\). However the same does \textbf{NOT} hold true if our function contains at least a singularity. Geometrically, we have seen this in the previous section. However, this does not stop from deforming our curve in some way, providing we don't cross the singularity as shown in images 2 and 3 of Figure 2
+\bigskip
+
+\noindent
+Doing so, gives us an important idea in Complex Analysis, namely we can cancel out parallel paths going in opposite directions. This is shown in the last image of Figure 2 and can be proven rigorously by taking the limit as the distance between the two lines goes to zero. When the distance between them is zero, we have two lines going in opposite directions on top of each other reducing their contribution to the contour integral to nothing 
+\bigskip
+
+\noindent
+Now, suppose that the singularity is at a point \(z_{0}\). In order to analyze the point we have to consider the Laurent Series around that point, just as we would consider a Taylor Series if we were dealing with real-valued functions. A Laurent series is a generalization of Power series made up of two parts, a Power part, which is the same as a Power Series and a Principal part, which contains the negative exponents. In this case the Laurent Series expansion about \(z_{0}\) is:
+
+\begin{align*}
+f(z_{0}) &= \sum_{n=-\infty}^{+\infty} a_{n}z^{n}  \\
+&= ... + \frac{a_{-2}}{(z-z_{0})^2} + \frac{a_{-1}}{(z-z_{0})} + a_{0} + a_{1}(z-z_{0}) + a_{2}(z-z_{0})^2 + ...
+\end{align*}
+
+\noindent
+We would like to integrate this function over a closed contour. So we will have to integrate over the series; we can consider each of the terms in the expansion as a function in itself and look at the integral of each of these over the closed contour, and view the original function as the sum of all of these. Usually we would have to check the absolute convergence of the doubly infinite series before doing this, however we defined the infinite series about a point \(z_{0}\), and so we already know that the series converges absolutely, furthermore it will converge to \(z_{0}\) itself by definition!
+\bigskip
+
+\section*{Positive Exponents}
+
+We will start our analysis by first looking at the terms with positive exponents of the term: \( z - z_{0}\), i.e. \(a_{0}\), $a_{1}(z - z_{0})$,  $a_{2}(z - z_{0})^2$, ... It should be clear that there’s not going to be any singularity at these points, since we’re looking at functions that are always defined on the complex plane. Therefore, we can integrate these analytic functions around a closed contour, and by Cauchy's Theorem, this integral will always be \(zero\). Hence, none of these terms with positive exponents will give any contribution to the final integral
+\bigskip
+
+\section*{Negative Exponents}
+
+Now, we will look at the terms with negative exponents. We claim that all of these integrals will also be \(zero\). To see that, consider a generic \( a_{-n}\) term, for \(n \leq -2\). Integrating this term along the contour \(\gamma\), defined by a circle with radius \(\theta\) and center \( z_{0}\)
+\bigskip
+
+\noindent
+Perform a substitution by setting 
+\[z - z_{0} = e^{i\theta} \quad \text{ for}  \quad 0 \leq \theta \leq 2\pi \]
+
+\noindent
+Then by the Chain rule: 
+
+\begin{align*}
+\centering 
+\int_{\gamma}^{} \frac{a_{-n}}{(z - z_{0})^n} \;\mathrm{d}z &= a_{-n}\int_{0}^{2\pi} \frac{1}{e^{in\theta}} ie^{i\theta} \;\mathrm{d}\theta \\
+&= a_{-n}i\int_{0}^{2\pi} ie^{i(1-n)\theta} \;\mathrm{d}\theta \\
+&= a_{-n} \frac{e^{i(1-n)\theta}}{1-n} \Big|_{\theta = 0}^{2\pi} \\
+&= 0
+\end{align*}
+
+\noindent
+Thus, we see that the terms with negative exponent will not give any contribution to the integral. However, we are still missing a term of the Laurent Series. This is a special term of the series, that will be discussed in the following section
+\bigskip
+
+\section*{The Residue}
+The \(a_{-1}\) coefficient of a Laurent Series is called the Residue of the series. The naming comes from the fact that it's the only term of the series that gives a non-zero contribution to the integral, it's the residual term of the series after the integral. We will now calculate it directly, following a similar procedure as before. Consider the contour \(\gamma\) defined by the a circle of radius \(\theta\) and center \(z_{0}\), and perform a substitution by setting 
+\[z - z_{0} = e^{i\theta} \quad \text{ for}  \quad 0 \leq \theta \leq 2\pi \]
+
+\noindent
+Then by the Chain rule: 
+
+\begin{align*}
+\centering 
+\int_{\gamma}^{} \frac{a_{-1}}{z - z_{0}} \;\mathrm{d}z &= \int_{0}^{2\pi} \frac{1}{e^{i\theta}} ie^{i\theta} \;\mathrm{d}\theta \\
+&= a_{-1}i\int_{0}^{2\pi}\;\mathrm{d}\theta \\
+&= 2\pi i a_{-1}
+\end{align*}
+
+\noindent
+So the non-zero contribution of the Residue is \(2\pi i a_{-1}\)
+\bigskip
+
+\section*{Residue Theorem and Generalization}
+
+\noindent
+By combining the three previous sections, we are able to give an answer for the contour integral of an analytic function \(f\) with singularity at \(z_{0}\), this integral will be \(2\pi i Res(f;z_{0})\), where \(Res(f;z_{0})\) means the residue of \(f\) at \(z_{0}\) (\(a_{-1}\) in our previous example). 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height = 4cm, width = 16cm]{"Pictures/Singularities2".png}
+    \caption{Closed contour around multiple singularities}
+    \label{fig:my_label3}
+\end{figure}
+
+\noindent
+As shown graphically in Figure 2, we can easily realize that considering the residue of a function is a linear operation. So, if a function has multiple singularities, we can easily add up their Residues. Doing so, gives us the Full Residue theorem for a positively oriented simply connected curve:
+
+\[\int_{\gamma}^{} f(z) \;\mathrm{d}z = 2\pi i \sum_{k=1}^{n} Res(f;z_{k}) \]
+
+\noindent
+Throughout this analysis we have only considered positively oriented simply connected curves, however it shouldn't be too difficult to extend the theorem to any type of curve. To do so we have to consider the winding number of a closed curve. 
+\bigskip
+
+\noindent
+The winding number of a closed curve in a plane around a point, is an integer representing the net number of times that the curve travels counterclockwise around the point. The winding number is increased by 1 for every closed curve travelling counterclockwise and decreased by 1 for every curve traveling clockwise. A couple of examples are given in Figure 3
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height = 8cm, width = 10cm]{"Pictures/WindingNumber".png}
+    \caption{Examples of Winding numbers around the black dot}
+    \label{fig:my_label4}
+\end{figure}
+
+\noindent
+It should be graphically easy to see that the contour integral of a closed curve with one singularity around a contour \(\gamma\) is given by:
+
+\[\int_{\gamma}^{} f(z) \;\mathrm{d}z = 2\pi i I(\gamma, z_{0})Res(f;z_{0}) \]
+
+\noindent
+where \(I(\gamma,z_{0})\) is the winding number of our contour \(\gamma\) around our singularity \(z_{0}\). And so the most general form of the Residue Theorem is given by:
+
+\[\int_{\gamma}^{} f(z) \;\mathrm{d}z = 2\pi i \sum_{k=1}^{n} I(\gamma,z_{k})Res(f;z_{k}) \]
+\bigskip
+
+\section*{Application of the Residue Theorem}
+
+\noindent
+The Residue Theorem used to be of particular importance for the computation of integral that couldn't be evaluated using classical techniques. As an example consider 
+
+\[\int_{-\infty}^\infty \frac{e^{itx}}{x^2+1}\,dx \]
+
+\noindent
+integral that arises in probability theory when calculating the characteristic function of the Cauchy distribution. It resists the techniques of elementary calculus but can be evaluated by expressing it as a limit of contour integrals
+\bigskip
+
+\noindent
+Suppose \(t > 0\) and define the contour \(C\) that goes along the real line from \( -a \) to \( a \) and then counterclockwise along a semicircle centered at 0 from \( -a \) to \( a \). Take \(a\) to be greater than 1, so that the imaginary unit \(i\) is enclosed within the curve.  Now consider the contour integral
+
+\[ \int_C {f(z)}\,dz =\int_C \frac{e^{itz}}{z^2+1}\,dz \]
+
+\noindent
+Since \(e^{itz}\) does not have any singularities at any point in the complex plane, we have that \(f\) has singularities only where the denominator is zero, namely at \(z \pm i \). But, only \(z = i\) is in the region bounded by this contour
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height = 7cm, width = 14cm]{"Pictures/ContourExample".png}
+    \caption{The Contour of \( C\)}
+    \label{fig:my_label5}
+\end{figure}
+
+\noindent
+Since by definition of \(f\) we have that 
+\begin{align*}
+f(z) &= \frac{e^{itz}}{z^2+1} \\
+&=\frac{e^{itz}}{2i}\left(\frac{1}{z-i}-\frac{1}{z+i}\right) \\
+&=\frac{e^{itz}}{2i(z-i)} -\frac{e^{itz}}{2i(z+i)} ,
+\end{align*}
+
+\noindent
+Now, the Residue of \(f\) at \( z=i\) is given by:
+
+\[Res(f; i) =\frac{e^{-t}}{2i}\]
+
+\noindent
+The Residue Theorem then yields that 
+
+\begin{align*}
+\int_C f(z)\,dz &= 2\pi iRes(f; i) f(z) \\
+&=2\pi i \frac{e^{-t}}{2i} \\
+&= \pi e^{-t} 
+\end{align*}
+
+\noindent
+However, the contour \(C\) can be split into two parts, the straight real line and the curved arc, so that
+
+\[\int_{\mathrm{real}} f(z)\,dz+\int_{\mathrm{arc}} f(z)\,dz=\pi e^{-t}\ \]
+
+\noindent
+and thus,
+
+\[\int_{-a}^a f(z)\,dz =\pi e^{-t}-\int_{\mathrm{arc}} f(z)\ dz \]
+
+\noindent
+By the ML-inequality, we can bound the integral along the arc by 
+
+\begin{align*}
+\left|\int_{\mathrm{arc}}\frac{e^{itz}}{z^2+1}\,dz\right| \leq \pi a  \sup_{\text{arc}} \left| \frac{e^{itz}}{z^2+1} \right| \leq \pi a \sup_{\text{arc}} \frac{1}{|z^2+1|} \leq \frac{\pi a}{a^2 - 1},
+\end{align*}
+
+\noindent
+and then noticing that, 
+ 
+\[ \lim_{a \to \infty} \frac{\pi a}{a^2-1} = 0 \]
+
+\noindent
+The bound on the numerator follows since for \(t > 0\), and complex numbers \(z\) along the arc (which lies in the upper half-plane), the argument \( \phi \) of \( z \) lies between 0 and \(\pi \).  Thus,
+
+\begin{align*}
+\left|e^{itz}\right| &=\left|e^{it|z|(\cos\phi + i\sin\phi)}\right| \\ &=\left|e^{-t|z|\sin\phi + it|z|\cos\phi}\right| \\
+&=e^{-t|z|\sin\phi} \le 1 
+\end{align*}
+
+\noindent
+Therefore,
+
+\[ \int_{-\infty}^\infty \frac{e^{itz}}{z^2+1}\,dz=\pi e^{-t} \]
+\bigskip
+
+\noindent
+If instead \(t < 0\) we can use a similar argument with an arc \(C'\) that winds around \(-i\) rather than \(i\) to show that 
+
+\[ \int_{-\infty}^\infty\frac{e^{itz}}{z^2+1}\,dz=\pi e^t \]
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height = 7cm, width = 14cm]{"Pictures/ContourExample2".png}
+    \caption{The Contour of \( C'\)}
+    \label{fig:my_label6}
+\end{figure}
+
+\noindent
+and finally we have,
+
+\[ \int_{-\infty}^\infty\frac{e^{itz}}{z^2+1}\,dz=\pi e^{-\left|t\right|} \]
+\bigskip
+
+\noindent
+While, if \(t = 0 \) then the integral can immediately be evaluated using elementary calculus methods and its value is \( \pi \)
+\bigskip
+\bigskip
+
+\noindent
+It is important to point out that although complex analysis techniques (especially the residue theorem) can be used for the evaluation of real integrals, in practise they are rarely used since it's usually much easier to use other methods
+
+\end{document}
