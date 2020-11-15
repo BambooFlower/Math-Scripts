@@ -2,4 +2,8 @@ Dynamical Systems contains:
 - Bifurcation Folder: Bifurcation plotters
 - Double Pendulum Folder: JavaScript visualization of the motion of a double pendulum
 - Mathematical Biology Folder: MATLAB visualization of Advection-Diffusion behavior of different biological invasions 
+<br/><br/>
+
+- dfield8.m: Direction field plotter
+- pplane8.m: Phase plane plotter 
 - LorentzAttractor.m: Animation showing the Lorenz attractor 
