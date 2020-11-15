@@ -61,7 +61,7 @@ dcolor = [0,0,1]; % Marker color setting: blue
 [r,c] = meshgrid(1:L,a); % associated cooridate data 
 surf(r,c,mat,'Marker','*','MarkerSize',p_siz,'FaceColor','None','MarkerEdgeColor', dcolor,'EdgeColor','None')
 view([90,0,0]) % change camera direction
-ylim([a0,a1]) % fit to data
+ylim([a0,a1]) 
 
 % labeling 
 % Remember to change the title for every plot
