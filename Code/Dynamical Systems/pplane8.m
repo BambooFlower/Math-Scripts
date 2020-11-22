@@ -65,7 +65,7 @@ if strcmp(action,'initialize')
    ll = length(tmpdir);
    tmpdir = tmpdir(1:ll-1);
    ud.remtd = 0;
-   if isempty(findstr(tmpdir,p))
+   if ~contains(tmpdir,p)
      ud.remtd = 1;
      addpath(tempdir)
    end
@@ -3960,7 +3960,7 @@ elseif strcmp(action,'eqpt')
   A = B+C*sqrt(-1);
   z = z(:,1);
   
-  if (~flag || norm((z-z0')./DY) > 1/5)
+  if (~flag | norm((z-z0')./DY) > 1/5)
     nstr(1:4) = nstr(2:5);
     nstr{5} = ['There is not an equilibrium point near (',...
 	       num2str(z0(1)),', ', num2str(z0(2)), ').  Ready'];
@@ -4634,7 +4634,7 @@ elseif strcmp(action,'paraeval')
       pos = 1;
       for jj = 1:lk
 	if (((k(jj) == 1)||(find(lopstr == str(k(jj)-1))))...
-	    &&((k(jj)+lp-1 == ll)|(find(ropstr == str(k(jj) + lp)))))
+	    &&((k(jj)+lp-1 == ll)||(find(ropstr == str(k(jj) + lp)))))
 	  s = [s,str(pos:(k(jj)-1)),value];
 	  pos = k(jj)+lp;
 	end
@@ -7328,9 +7328,9 @@ if (nargin < 3) || (isempty(flag))
         end
         % Finally we plot the newest line segment.
         if plotf
-	  set(ud.line,'Xdata',[yold(1),y(1,:)],'Ydata',[yold(2),y(2,:)]);
-	  drawnow  
-	end
+            set(ud.line,'Xdata',[yold(1),y(1,:)],'Ydata',[yold(2),y(2,:)]);
+            drawnow  
+        end
     end
 
 else
