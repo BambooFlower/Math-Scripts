@@ -14,7 +14,7 @@ class Renderer():
         M = 1024  # Slice size
 
         # Load the song
-        songName = "backstage.mp3"
+        songName = "backstage.wav"
         
         # Number of FFT bar groups
         self.num_groups = 31
