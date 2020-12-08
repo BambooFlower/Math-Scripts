@@ -1,6 +1,6 @@
-![alt text](https://github.com/BambooFlower/Math-Scripts/blob/master/Plots/PiEstimate/PiPlot.png)
+![alt text](https://github.com/BambooFlower/Math-Scripts/blob/master/Images/PiPlot.png)
 
-![alt text](https://github.com/BambooFlower/Math-Scripts/blob/master/Plots/PiEstimate/PiEstimate.png)
+![alt text](https://github.com/BambooFlower/Math-Scripts/blob/master/Images/PiEstimate.png)
 
 PiEstimate contains:
 - circle.m: Plot a circle 
