@@ -8,6 +8,7 @@ from pydub import AudioSegment
 class Audio_fft():
     def __init__(self, filename,M=2048,group_num=16):
         self.song = AudioSegment.from_file(filename)
+        self.song = self.song.set_channels(1)
         
         self.rate = self.song.frame_rate
         
@@ -22,7 +23,8 @@ class Audio_fft():
         step_size = 1/num_groups
         out = []
         for i in range(num_groups):
-            out.append(15.877*np.exp(i*step_size*7.1274))
+            # out.append(15.877*np.exp(i*step_size*7.1274))
+            out.append(15*np.exp(i*step_size*7.22))
         return out
                 
     def get_fft(self,slice_num, group_num=16, get_freq_space=False,
@@ -32,14 +34,14 @@ class Audio_fft():
         spectrum = fft(song_slice)
 
         # Remove the second half, since the FFT of real frequencies is symmetric
-        spectrum = np.abs(spectrum)[:self.M//2]  
+        spectrum = 2*np.abs(spectrum)[:self.M//2]  
 
-        self.freq_space = (self.rate / self.M/2)
+        self.freq_space = (self.rate /1 /self.M)
         
         # Return not grouped fft
         if not grouped:
             return spectrum
-
+        
         # Split array
         pos = 0
         separated_arrs = [0]*self.num_groups
@@ -47,6 +49,8 @@ class Audio_fft():
         for i in range(self.M//2):
             if(self.groups[pos] <= (i+1)*self.freq_space):
                 pos += 1
+            if pos >= len(separated_arrs):
+                pos = len(separated_arrs)-1
             separated_arrs[pos] += spectrum[i]
 
            
