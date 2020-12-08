@@ -1,45 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# import matplotlib.pyplot as plt
-# import numpy as np
-
-
-# def plot_sine():
-#     # x = np.linspace(-3*np.pi,3*np.pi,100)
-#     x = np.linspace(0,10,100)
-#     A = 2
-#     L = 2*np.pi
-#     F = 3
-#     R = 10
-#     y = A*np.sin(x*L*F/R)
-#     plt.plot(x,y)
-#     plt.ylabel('sin(x)')
-#     plt.xlabel('x')
-#     plt.title('Sine wave')
-#     plt.show()
-
-# def d(x,a=0.005):
-#     return 1/(np.abs(a)*np.sqrt(np.pi))*np.exp(-(x/a)**2)
-# def f(t):
-#     #return np.cos(2*np.pi*3*t)*np.exp(-np.pi*t**2)#np.cos(2*np.pi*2*t)+np.cos(2*np.pi*3*t)
-#     return np.cos(2*np.pi*2*t)+np.cos(2*np.pi*3*t)
-    
-# x = np.linspace(-2,2,10000)
-# y = f(x)
-# plt.plot(x,y)
-# plt.xlabel('t')
-# plt.ylabel('f(t)')
-# plt.title('Sound Wave')
-
-# x = np.linspace(-5,5,10000)
-# #y = 0.5*(np.exp(-np.pi*(x-3)**2)+np.exp(-np.pi*(x+3)**2))
-# y = d(x-2)+d(x+3)+d(x+2)+d(x-3)
-# plt.plot(x,y)
-# plt.ylabel('Magnitude of the Fourier Transform')
-# plt.xlabel('x')
-# plt.yticks([])
-# plt.title('Fourier Transform')
-
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.fftpack import fft
@@ -90,15 +48,3 @@ spectrum = 2.0/M*np.abs(spectrum)[:M//2]
 separated_arrs = group_data(spectrum,num_groups)
 plt.bar(range(len(separated_arrs)),separated_arrs)
 plt.title('Grouped FFT SimpleScale.wav')
-
-# xf = np.linspace(0, 1.0/(2.0*T), M//2)
-# plt.bar(xf,spectrum)
-# # plt.xlim(0,2000)
-# plt.xlabel('Frequency')
-# plt.ylabel('Fourier Transform Magnitude')
-# plt.title('FFT of Backstage.mp3 at t=0.3s')
-
-# plt.plot(np.linspace(seconds,seconds+M*T,len(song_slice)),song_slice)
-# plt.xlabel('t')
-# plt.ylabel('Pressure')
-# plt.title('Raw sound file values')
