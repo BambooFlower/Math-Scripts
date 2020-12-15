@@ -8,6 +8,7 @@
 A collection of scripts for mathematical computation and visualization, topics include Mathematical Biology, Graph Theory, 
 ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 
+- Complex Analysis Folder: Collection of Complex Analysis scripts 
 - Conway Game of Life Folder: JavaScript implementation of Conway's game of life
 - Cryptography Folder: Collection of encryption-decryption ciphers
 - Differential Geometry Folder: Collection of differential geometry scripts
@@ -21,9 +22,6 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo trials
 - Planetery Orbits Folder: Python scripts for cicular and elliptical orbits
 - Quaternions Folder: 3D rotations using quaternions 
-
-<br/><br/>
-- Mandelbrot.m: Visualization of the Mandelbrot set
 
 <br/><br/>
 The  JavaScript code can be seen running [here](https://bambooflower.github.io/Math-Scripts/)
