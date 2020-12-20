@@ -4,6 +4,7 @@ function Mandelbrot(n, niter)
 % niter: Number of iterations 
 
 close all
+clear
 
 % If no input are given 
 if nargin == 0
@@ -28,7 +29,7 @@ for ii = 1:niter
 end
 
 % Plotting 
-figure(1)
+figure
 imagesc(k)
 title('Mandelbrot Set')
 colormap jet
