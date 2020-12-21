@@ -11,7 +11,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Complex Analysis Folder: Collection of Complex Analysis scripts 
 - Conway Game of Life Folder: JavaScript implementation of Conway's game of life
 - Cryptography Folder: Collection of encryption-decryption ciphers
-- Differential Geometry Folder: Collection of differential geometry scripts
+- Geometry Folder: Collection of geometry scripts
 - Dynamical Systems Folder: Collection of scripts for dynamical systems theory 
 - Fluid Flow Folder: Collection of fluid flow (both viscous and inviscid) visualizations
 - Fourier Series & Transforms Folder: JavaScript visualization of Fourier series 
