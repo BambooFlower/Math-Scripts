@@ -6,8 +6,10 @@ Numerical Analysis contains:
 
 <br/><br/>
 - Adaptsmp.m: Adaptive quadrature using Simpson's rule
-- CrankNicolsonHeatEquation.py: Crank-Nicolson method to solve the heat equation
+- BackTrackingLineSearch.py: Implementation of Back Tracking Line Search algorithm
+- CrankNicolsonHeatEquation.py: Implementation of Crank-Nicolson method to solve the heat equation
 - DiscreteLaplacian.jl: Example of the discrete Laplacian 
+- GaussNewton.py: Implementation of Gauss-Newton solver
 - ImplicitMethodHeatEquation.py: Implicit method to solve the heat equation
 - NewtonMethod.jl: Implementation of Newton's method
 - RombergIntegration.cpp: Implementation of Romberg's Integration
