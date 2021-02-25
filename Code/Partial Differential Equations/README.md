@@ -1,4 +1,5 @@
 Partial Differential Equations contains:
+- Burgers Equation Folder: Collection of scripts on the Burgers' equation
 - Heat Equation Folder: Collection of scripts on the heat equation
 - Wave Equation Folder: Collection of scripts on the wave equation
 
