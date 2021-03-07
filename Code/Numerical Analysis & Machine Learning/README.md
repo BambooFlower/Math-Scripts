@@ -3,6 +3,7 @@ Numerical Analysis contains:
 - Gauss-Seidel Folder: Implementation of Gauss-Seidel
 - Gradient Descent Folder: Implementation of Gradient Descent 
 - Matrix Multiplication Folder: Implementation of Matrix multiplication algorithms
+- Newton Folder: Implementation of Newton's method
 
 <br/><br/>
 - Adaptsmp.m: Adaptive quadrature using Simpson's rule
@@ -11,6 +12,7 @@ Numerical Analysis contains:
 - DiscreteLaplacian.jl: Example of the discrete Laplacian 
 - GaussNewton.py: Implementation of Gauss-Newton solver
 - ImplicitMethodHeatEquation.py: Implicit method to solve the heat equation
-- NewtonMethod.jl: Implementation of Newton's method
+- RecursiveQuadrature.m: Implementation of reccrusive adaptive quadrature
 - RombergIntegration.cpp: Implementation of Romberg's Integration
 - RungeKutta.m: Implementation of the Runge-Kutta method
+- SteepestDescent.m: Implementation of the Steepest Descent algorithm
