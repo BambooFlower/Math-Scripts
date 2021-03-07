@@ -1,21 +1,37 @@
-function x = GaussSeidel(A, b, x, iters)
-% Equation solver for arbitrary number of equations using Gauss-Seidel
-% Variables:
-% A: Matrix of coefficients of x 
-% b: Vector of entries indepedent of x 
-% x: Initial/Final values of the solution
-% iters: Number of iterations
+function [x, RelRes, diffX] = GaussSeidel (A, b, x0, tau, m)
+% defining the splitting of A
+D = diag(diag(A));
+E = -tril(A,-1);
+F = -triu(A,1);
+P = D - E;
 
-    for i = 1:iters
-        for j = 1:size(A,1)
-            x(j) = (1/A(j,j)) * (b(j) - A(j,:)*x + A(j,j)*x(j));
-        end
-    end
+% allocating memory for the quantity to be computed
+RelRes = zeros(m,1);
+diffX = zeros(m,1);
+% RelErr = zeros(m,1);
+
+% initialising the method
+nb = norm(b);
+x = x0;
+relres = norm(b - A*x)/nb;
+itc = 0;
+xprev = x0;
+
+while (relres > tau) && (itc < m) % stopping criteria
+    % main iteration
+    x = F*x + b;
+    x = P\x;
+    itc = itc + 1;
+    
+    % storing the quantities to be given as an output
+    relres = norm(b - A*x)/nb;
+    RelRes(itc) = relres;
+    diffX(itc) = norm(x-xprev)/norm(x);
+%     RelErr(itc) = norm(x-xex)/norm(xex);
+    xprev = x;
 end
 
-% Example:
-% A = [10,-1,2,0;-1,11,-1,3;2,-1,10,-1;0,3,-1,8];
-% b = [6; 25; -11; 15];
-% x = [0; 0; 0; 0];
-% iters = 10
+% shrink the output to the actual number of iterations carried out
+RelRes = RelRes(1:itc);
+diffX = diffX(1:itc);
 
