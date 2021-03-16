@@ -64,7 +64,7 @@ def which_pools(r):
             retval.append(i)
         else:
             break   # optimization.  once this fails, it always fails
-        mask = (mask << 1) | L
+        mask = (mask << 1) 
     return retval
 
 class FortunaAccumulator(object):
