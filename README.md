@@ -14,6 +14,7 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Fourier Series & Transforms Folder: JavaScript visualization of Fourier series 
 - Graph Theory Folder: Collection of scripts for Graph Theory
 - Hypercube Folder: JavaScript visualization of the hypercube (Tesseract)
+- Number Theory Folder: Collection of Number Theory scripts
 - Numerical Analysis Folder: Implementation of various numerical analysis methods
 - Partial Differential Equatons Fodler: Collection of PDEs scripts
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo trials
