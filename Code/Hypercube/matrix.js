@@ -75,7 +75,7 @@ function matmul(a, b) {
     return null;
   }
 
-  result = [];
+  let result = [];
   for (let j = 0; j < rowsA; j++) {
     result[j] = [];
     for (let i = 0; i < colsB; i++) {
