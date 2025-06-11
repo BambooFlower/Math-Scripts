@@ -14,9 +14,9 @@ ODEs, PDEs, Fluid Mechanics, Combinatorics and Dynamical Systems:
 - Hypercube Folder: JavaScript visualization of the hypercube (Tesseract)
 - Number Theory Folder: Collection of Number Theory scripts
 - Numerical Analysis Folder: Implementation of various numerical analysis methods
-- Partial Differential Equatons Fodler: Collection of PDEs scripts
+- Partial Differential Equations Folder: Collection of PDEs scripts
 - PiEstimate Folder: MATLAB estimation of Pi using Monte Carlo trials
-- Planetery Orbits Folder: Python scripts for cicular and elliptical orbits
+- Planetary Orbits Folder: Python scripts for circular and elliptical orbits
 - Quaternions Folder: 3D rotations using quaternions 
 
 <br/><br/>
