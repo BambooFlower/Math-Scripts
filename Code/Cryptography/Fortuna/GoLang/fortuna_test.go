@@ -46,7 +46,7 @@ func TestFortuna_N(t *testing.T) {
 
 func seed(prng *SynchronizedPRNG) {
 	for i := 0; i < 8*32; i++ {
-		prng.Seed(time.Nanoseconds())
+		prng.Seed(time.Now().UnixNano())
 		time.Sleep(1e6) // 1 ms
 	}
 }

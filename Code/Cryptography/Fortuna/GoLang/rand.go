@@ -1,8 +1,7 @@
-
 package fortuna
 
 import (
-	"rand"
+	"math/rand"
 )
 
 var globalRand = rand.New(globalSyncronizedFortuna)
@@ -46,8 +45,7 @@ func Perm(n int) []int { return globalRand.Perm(n) }
 // To produce a different normal distribution, callers can
 // adjust the output using:
 //
-//  sample = NormFloat64() * desiredStdDev + desiredMean
-//
+//	sample = NormFloat64() * desiredStdDev + desiredMean
 func NormFloat64() float64 { return globalRand.NormFloat64() }
 
 // ExpFloat64 returns an exponentially distributed float64 in the range
@@ -56,6 +54,5 @@ func NormFloat64() float64 { return globalRand.NormFloat64() }
 // To produce a distribution with a different rate parameter,
 // callers can adjust the output using:
 //
-//  sample = ExpFloat64() / desiredRateParameter
-//
+//	sample = ExpFloat64() / desiredRateParameter
 func ExpFloat64() float64 { return globalRand.ExpFloat64() }

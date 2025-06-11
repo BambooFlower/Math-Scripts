@@ -1,12 +1,10 @@
-
 package fortuna
 
 import (
 	sha "crypto/sha256"
 	"hash"
 	"io"
-	"os"
-	"rand"
+	"math/rand"
 	"strconv"
 	"sync"
 )
@@ -23,7 +21,7 @@ type PRNG interface {
 	rand.Source
 
 	// Reader is the interface that wraps the basic Read method:
-	// Read(buffer []byte) (n int, err os.Error)
+	// Read(buffer []byte) (n int, err error)
 	//
 	// Read reads up to len(buffer) bytes into buffer.  It returns the number
 	// of bytes actually read which in the case of PRNGs will always be
@@ -85,7 +83,7 @@ func (f *Fortuna) Seed(seed int64) { globalUserSeed.setSeed(seed) }
 func (f *Fortuna) Int63() int64 { return int63(f) }
 
 // Read reads up to len(buffer) bytes into buffer.
-func (f *Fortuna) Read(buffer []byte) (n int, err os.Error) {
+func (f *Fortuna) Read(buffer []byte) (n int, err error) {
 	return f.generator.Read(buffer)
 }
 
@@ -109,11 +107,11 @@ func (f *Fortuna) reseed() {
 	logTrace("--> F.reseed()")
 	// on the n-th reseeding, pool k is used only if 2**k divides n
 	f.timesSeeded++
-	logDebug("F.reseed(): timesSeeded = " + strconv.Uitoa64(f.timesSeeded))
+	logDebug("F.reseed(): timesSeeded = " + strconv.FormatUint(f.timesSeeded, 10))
 	f.lock.Lock()
 	for k := 0; k < 32; k++ {
 		if f.timesSeeded%(1<<uint64(k)) == 0 {
-			poolBytes := f.pools[k].Sum()
+			poolBytes := f.pools[k].Sum(nil)
 			f.generator.md.Write(poolBytes)
 		}
 	}

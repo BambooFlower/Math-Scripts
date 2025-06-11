@@ -1,12 +1,10 @@
-
-
 package fortuna
 
 import (
 	aes "crypto/aes"
+	"crypto/cipher"
 	sha "crypto/sha256"
 	"hash"
-	"os"
 	"time"
 )
 
@@ -23,7 +21,7 @@ type Generator struct {
 	// re-key the cipher without altering the value of the counter.  While we
 	// could've addressed the 1st issue by making the newCTRStream function in
 	// that file public we would still have a problem addressing the 2nd issue.
-	aes     *aes.Cipher
+	aes     cipher.Block
 	key     []byte    // a 256-bit key initialized to 0
 	counter []byte    // a 16-byte (AES block size) counter starting at 0
 	tmp     []byte    // temp buffer to hold up to 128-bit of keystream data
@@ -31,8 +29,8 @@ type Generator struct {
 }
 
 // NewGenerator conveniently calls NewSeededGenerator passing the number
-// of nano-seconds since the Unix epoch as a seed value.
-func NewGenerator() *Generator { return NewSeededGenerator(time.Nanoseconds()) }
+// of nanoseconds since the Unix epoch as a seed value via time.Now().UnixNano().
+func NewGenerator() *Generator { return NewSeededGenerator(time.Now().UnixNano()) }
 
 // NewSeededGenerator creates, seeds, and returns a Generator.
 func NewSeededGenerator(seed int64) *Generator {
@@ -64,17 +62,21 @@ func (g *Generator) Seed(seed int64) {
 // reseed sets up an AES in Counter mode using the current context of the
 // Generator's message digest algorithm.
 // Formally reseed is specified as:
-//   K <-- SHA-256(K || s)
+//
+//	K <-- SHA-256(K || s)
+//
 // We break this operation into two:
 // (a) the SHA-256(K) which we do when we first create a new Generator, and
-//     every time we re-key it, and
+//
+//	every time we re-key it, and
+//
 // (b) the SHA-256(s) which will make sure to call before this method.
 // We do this to facilitate the implementation of the Fortuna PRNG reseed
 func (g *Generator) reseed() {
-	g.key = g.md.Sum()
+	g.key = g.md.Sum(nil)
 	c, err := aes.NewCipher(g.key)
 	if err != nil {
-		m := "G.reseed(): AES error: " + err.String()
+		m := "G.reseed(): AES error: " + err.Error()
 		logFatal(m)
 		panic(m + "\n")
 	}
@@ -91,7 +93,7 @@ func (g *Generator) Int63() int64 { return int63(g) }
 // 1. Read calls will block until enough data is available to fill buffer,
 // 2. Read will always return len(buffer) and nil, unless...
 // 3. Read will return -1 and an error iff the Generator is not yet seeded.
-func (g *Generator) Read(buffer []byte) (n int, err os.Error) {
+func (g *Generator) Read(buffer []byte) (n int, err error) {
 	if isZero(g.counter) {
 		m := "Generator not seeded yet"
 		logError("G.Read(): " + m)
@@ -124,8 +126,8 @@ func (g *Generator) rekey() {
 	g.generateBlock(g.key[aes.BlockSize:])
 	c, err := aes.NewCipher(g.key)
 	if err != nil {
-		logError("rekey(): Unexpected AES error: " + err.String())
-		panic("oops: unexpected error while rekeying a Generator: " + err.String() + "\n")
+		logError("rekey(): Unexpected AES error: " + err.Error())
+		panic("oops: unexpected error while rekeying a Generator: " + err.Error() + "\n")
 	}
 	g.aes = c
 	g.md.Write(g.key)
