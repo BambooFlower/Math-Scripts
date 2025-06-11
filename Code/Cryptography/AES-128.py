@@ -41,35 +41,36 @@ def ctrDecrypt(key, cypherText, blockSize):
 
 # CTR decryption variant 1 (use AES.MODE_CBC mode), 
 def ctrDecrypt1(key, cypherText, blockSize):
-    k = key.decode('hex')
-    ct = cypherText.decode('hex')
+    k = bytes.fromhex(key)
+    ct = bytes.fromhex(cypherText)
     iv = ct[:blockSize]
     ct1 = ct[blockSize:]
-    ctr = Counter.new(blockSize*8,initial_value=long(iv.encode('hex'),16))
-    obj = AES.new(k,AES.MODE_CTR,counter=ctr)
+    ctr = Counter.new(blockSize * 8, initial_value=int(iv.hex(), 16))
+    obj = AES.new(k, AES.MODE_CTR, counter=ctr)
     paddedStr = obj.decrypt(ct1)
     return paddedStr
 
 # CTR decryption variant 2 
 def ctrDecrypt2(key, cypherText, blockSize):
-    cypherTextBlocks =  [cypherText[i:i+(blockSize*2)] for i in range(0, len(cypherText), (blockSize*2))]   
-    iv =  long(cypherTextBlocks.pop(0), 16) 
+    cypherTextBlocks = [cypherText[i:i + (blockSize * 2)]
+                        for i in range(0, len(cypherText), blockSize * 2)]
+    iv = int(cypherTextBlocks.pop(0), 16)
 
-    cypherTextBlocksDecoded = map(methodcaller("decode", "hex"), cypherTextBlocks)
-    
-    k = key.decode('hex')
+    cypherTextBlocksDecoded = [bytes.fromhex(b) for b in cypherTextBlocks]
 
-    pt = ""
+    k = bytes.fromhex(key)
+
+    pt = b""
 
     i = 0
     for c in cypherTextBlocksDecoded:
-        ctr = hex(iv+i << 64)[2:(2*blockSize)+2]
-        encIV = AES.new(k, AES.MODE_ECB).encrypt(ctr)   
-        plaintext =  strxor(encIV, c)
-        i = i + 1
-        pt = plaintext + pt
-    
-    return "?"
+        ctr_bytes = (iv + i).to_bytes(blockSize, byteorder="big")
+        encIV = AES.new(k, AES.MODE_ECB).encrypt(ctr_bytes)
+        plaintext = strxor(encIV, c)
+        i += 1
+        pt += plaintext
+
+    return pt
   
 # Do 2 variants of CBC decryption   
 def cbcDecrypt(key, cypherText, blockSize):
@@ -82,44 +83,44 @@ def cbcDecrypt(key, cypherText, blockSize):
 
 # CBC decryption variant 1 (use AES.MODE_CBC mode), 
 def cbcDecrypt1(key, cypherText, blockSize):
-    k = key.decode('hex')
-    ct = cypherText.decode('hex')
+    k = bytes.fromhex(key)
+    ct = bytes.fromhex(cypherText)
     iv = ct[:blockSize]
     ct1 = ct[blockSize:]
-    obj = AES.new(k,AES.MODE_CBC,iv)
+    obj = AES.new(k, AES.MODE_CBC, iv)
     paddedStr = obj.decrypt(ct1)
-    paddingAmount = ord(paddedStr[len(paddedStr)-1:])
+    paddingAmount = paddedStr[-1]
     return paddedStr[:-paddingAmount]
 
 
 # CBC decryption variant 2 defines blocks self, encrypts per block (ECB mode) and xors with previous block => plaintext
 def cbcDecrypt2(key, cypherText, blockSize):
-    cypherTextBlocks =  [cypherText[i:i+(blockSize*2)] for i in range(0, len(cypherText), (blockSize*2))]
-    cypherTextBlocksDecoded = map(methodcaller("decode", "hex"), cypherTextBlocks)
-    #iv =  cypherTextBlocksDecoded.pop(0)
-    k = key.decode('hex')
+    cypherTextBlocks = [cypherText[i:i + (blockSize * 2)]
+                        for i in range(0, len(cypherText), blockSize * 2)]
+    cypherTextBlocksDecoded = [bytes.fromhex(b) for b in cypherTextBlocks]
+    k = bytes.fromhex(key)
 
-    pt = ""
+    pt = b""
 
-    iter = len(cypherTextBlocksDecoded)
+    iter_idx = len(cypherTextBlocksDecoded)
     for c in reversed(cypherTextBlocksDecoded):
-        iter = iter - 1
-        if(iter > 0):
-            cipher = AES.new(k, AES.MODE_ECB).decrypt(c)            
-            plaintext = strxor(cipher, cypherTextBlocksDecoded[iter - 1])
-            #print("[",iter,"]", c.encode('hex'), " => ", cipher.encode('hex'), plaintext)
+        iter_idx -= 1
+        if iter_idx > 0:
+            cipher = AES.new(k, AES.MODE_ECB).decrypt(c)
+            plaintext = strxor(cipher, cypherTextBlocksDecoded[iter_idx - 1])
             pt = plaintext + pt
 
-    paddingAmount = ord(pt[len(pt)-1:])
-            
+    paddingAmount = pt[-1]
+
     return pt[:-paddingAmount]
 
 
 # xor two strings of different lengths
-def strxor(a, b):     
-    if len(a) > len(b):
-        return "".join([chr(ord(x) ^ ord(y)) for (x, y) in zip(a[:len(b)], b)])
-    else:
-        return "".join([chr(ord(x) ^ ord(y)) for (x, y) in zip(a, b[:len(a)])])
+def strxor(a, b):
+    """XOR two byte strings and return the result."""
+    a_bytes = a
+    b_bytes = b
+    min_len = min(len(a_bytes), len(b_bytes))
+    return bytes([a_bytes[i] ^ b_bytes[i] for i in range(min_len)])
 
 main()
