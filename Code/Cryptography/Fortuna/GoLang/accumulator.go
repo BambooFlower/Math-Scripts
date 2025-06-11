@@ -15,12 +15,13 @@ type entropySource interface {
 	getPoolNdx() int
 
 	// Returns available entropy bytes and potential OS error.
-	getEntropy() ([]byte, os.Error)
+	getEntropy() ([]byte, error)
 }
 
 var globalDevRandom = &devSource{id: 0, name: "/dev/random"}
 var globalUserSeed = new(userSeed)
 var globalDevURandom = &devSource{id: 2, name: "/dev/urandom"}
+
 // TODO (rsn) - implement more collectors; e.g. a GPG seed reader
 
 // Starts the known entropy collectors each in its own goroutine.
@@ -37,7 +38,7 @@ func start(es entropySource) {
 		entropy, err := es.getEntropy() // will block until enough entropy is ready
 		logDebug("Got entropy from " + toString(es))
 		if err != nil {
-			logWarn("start(): Unexpected error getting entropy from " + toString(es) + ": " + err.String())
+			logWarn("start(): Unexpected error getting entropy from " + toString(es) + ": " + err.Error())
 			// TODO (rsn) - investigate whether we should retry a few times
 			// and if error persists, bail out altogether
 		} else { // update Fortuna's pool at index poolNdx
@@ -63,7 +64,7 @@ func (r *devSource) getPoolNdx() int {
 	return result
 }
 
-func (r *devSource) getEntropy() ([]byte, os.Error) {
+func (r *devSource) getEntropy() ([]byte, error) {
 	logTrace("--> " + r.name + ".getEntropy()")
 	r.lock.Lock()
 	defer r.lock.Unlock()
@@ -71,7 +72,7 @@ func (r *devSource) getEntropy() ([]byte, os.Error) {
 		logInfo(r.name + ".getEntropy(): About to open device")
 		f, err := os.OpenFile(r.name, os.O_RDONLY, 0)
 		if f == nil {
-			logError("Unable to open " + r.name + ": " + err.String())
+			logError("Unable to open " + r.name + ": " + err.Error())
 			return nil, err
 		}
 		r.f = f
@@ -98,7 +99,7 @@ func (r *userSeed) getPoolNdx() int {
 	return result
 }
 
-func (r *userSeed) getEntropy() ([]byte, os.Error) {
+func (r *userSeed) getEntropy() ([]byte, error) {
 	logTrace("--> userSeed.getEntropy()")
 	for true {
 		r.lock.Lock()

@@ -1,4 +1,3 @@
-
 package fortuna
 
 import (
@@ -48,7 +47,7 @@ func TestGenerator_N(t *testing.T) {
 func TestSeed(t *testing.T) {
 	prng1 := NewUnseededGenerator()
 	prng2 := NewUnseededGenerator()
-	seed := time.Nanoseconds()
+	seed := time.Now().UnixNano()
 	prng1.Seed(seed)
 	prng2.Seed(seed)
 	for i := 0; i < 1000; i++ {

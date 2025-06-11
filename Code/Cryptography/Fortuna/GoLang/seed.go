@@ -15,7 +15,7 @@ func writeSeedFile(prng *Fortuna) bool {
 	logTrace("--> writeSeedFile()")
 	f, e1 := openSeedFile(os.O_WRONLY)
 	if e1 != nil {
-		logError("writeSeedFile(): Failed opening random seed file: " + e1.String())
+		logError("writeSeedFile(): Failed opening random seed file: " + e1.Error())
 		return false
 	}
 
@@ -24,13 +24,13 @@ func writeSeedFile(prng *Fortuna) bool {
 	buffer := make([]byte, 64)
 	_, e2 := prng.Read(buffer)
 	if e2 != nil {
-		logError("writeSeedFile(): Failed obtaining random seed data: " + e2.String())
+		logError("writeSeedFile(): Failed obtaining random seed data: " + e2.Error())
 		return false
 	}
 
 	_, e3 := f.Write(buffer)
 	if e3 != nil {
-		logError("writeSeedFile(): Failed writing to random seed file: " + e3.String())
+		logError("writeSeedFile(): Failed writing to random seed file: " + e3.Error())
 		return false
 	}
 
@@ -56,18 +56,18 @@ func updateSeedFile(prng *Fortuna) bool {
 			logInfo("updateSeedFile(): About to create random seed file")
 			e11 := createSeedFile()
 			if e11 != nil {
-				logError("updateSeedFile(): Failed creating random seed file: " + e11.String())
+				logError("updateSeedFile(): Failed creating random seed file: " + e11.Error())
 			} else {
 				result = writeSeedFile(prng)
 			}
 		} else {
-			logError("updateSeedFile(): Failed opening random seed file: " + e1.String())
+			logError("updateSeedFile(): Failed opening random seed file: " + e1.Error())
 		}
 	} else {
 		s := make([]byte, 128)
 		n, e2 := f.Read(s)
 		if e2 != nil {
-			logError("updateSeedFile(): Failed reading random seed file: " + e2.String())
+			logError("updateSeedFile(): Failed reading random seed file: " + e2.Error())
 			f.Close()
 		} else {
 			if n != 64 {
@@ -105,12 +105,12 @@ func updateSeedPeriodically(f *Fortuna) {
 }
 
 // openSeedFile opens the Fortuna user's random seed file.
-func openSeedFile(flag int) (*os.File, os.Error) {
+func openSeedFile(flag int) (*os.File, error) {
 	return os.OpenFile(getSeedFilePath(), flag, 0600) // only u can r+w
 }
 
 // createSeedFile creates the file name and all parent sub-directories.
-func createSeedFile() os.Error {
+func createSeedFile() error {
 	// NOTE (rsn) - the next commented out statements were for trying to use
 	// $HOME/.go as the location for the random seed file.  we now use $GOROOT
 	// which MUST be always there

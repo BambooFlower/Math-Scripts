@@ -56,12 +56,12 @@ type SeedingError struct {
 	Msg string
 }
 
-func (e SeedingError) String() string { return "crypto/fortuna: " + e.Msg }
+func (e SeedingError) Error() string { return "crypto/fortuna: " + e.Msg }
 
 // currentTimeMillis returns the current time in milliseconds since the Unix
 // epoch.
 func currentTimeMillis() int64 {
-	result := time.Nanoseconds()
+	result := time.Now().UnixNano()
 	return result / 1e6
 }
 

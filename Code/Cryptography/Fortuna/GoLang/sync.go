@@ -1,7 +1,6 @@
 package fortuna
 
 import (
-	"os"
 	"sync"
 )
 
@@ -35,7 +34,7 @@ func (sg *SynchronizedPRNG) Seed(seed int64) {
 
 func (sg *SynchronizedPRNG) Int63() int64 { return int63(sg) }
 
-func (sg *SynchronizedPRNG) Read(buffer []byte) (n int, err os.Error) {
+func (sg *SynchronizedPRNG) Read(buffer []byte) (n int, err error) {
 	sg.lock.Lock()
 	defer sg.lock.Unlock()
 	return sg.prng.Read(buffer)
